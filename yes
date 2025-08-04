@@ -32,12 +32,6 @@ getgenv().bgsInfConfig = {
     -- Rift Features (Added from your latest script)
     ENCHANT_TEAMUP = true,
     ENCHANT_TEAMUP_TIER = 3,
-    AUTO_BOUNTY_RIFT = false,
-    MIN_RIFT_MULTIPLIER = ,
-    RIFT_EGGS = {""},
-    SUMMON_RIFT_EGG = "",
-    SUMMON_RIFT_LUCK = ,
-    SUMMON_RIFT_TIME = ,
 
     HATCH_1X_EGG = {"Candy Egg"},
     ALWAYS_INFINITY_ELIXIR = true,
