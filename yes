@@ -39,6 +39,8 @@ getgenv().bgsInfConfig = {
     ALWAYS_EGG_ELIXIR = true,
     ALWAYS_SECRET_ELIXIR = false,
 
+    IGNORE_SEASON_CHALLENGES = true,
+
     SUMMON_RIFT_EGG = "Hell Egg",  -- Egg Name
     SUMMON_RIFT_LUCK = 25,  -- Luck 5, 10, 15, 20, 25 
     SUMMON_RIFT_TIME = 30,  -- Time 10, 15, 20, 25, 30
