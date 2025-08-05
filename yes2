@@ -41,7 +41,7 @@ getgenv().bgsInfConfig = {
 
     IGNORE_EQUIP_BEST_PET = true,
     IGNORE_SEASON_CHALLENGES = true,
-    AUTO INDEX = true,
+    AUTO_INDEX = true,
 
     WEBHOOK_URL = "https://discord.com/api/webhooks/1400470775592521798/-48oF_gPY30E3FhwJY8djz4k6eD64ZOgaWCmKHWzf9cW1nQN53WUoq0aOmd2JGWRJXWP",
     DISCORD_ID = "",
