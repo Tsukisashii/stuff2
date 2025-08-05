@@ -1,0 +1,16 @@
+script_key="";
+getgenv().bgsInfConfig = {
+    JOB_ID = "85896571713843",
+    USERNAME_TO_TRADE = "Tsukisashi",
+
+    GIVE_SECRET = true,
+    GIVE_LEGENDARY = false,
+    IGNORE_NORMAL_LEGENDARY = false,
+    IGNORE_SHINY_LEGENDARY = false,
+    IGNORE_MYTHIC_LEGENDARY = false,
+    IGNORE_SHINY_MYTHIC_LEGENDARY = false,
+    IGNORE_EXCLUSIVE_LEGENDARY = false,
+    MIN_LEGENDARY_TIER_TO_GIVE = 3,
+}
+
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/aa119a1c38fa7f544a2ce750cd72ad87.lua"))()
