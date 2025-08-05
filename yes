@@ -31,12 +31,16 @@ getgenv().bgsInfConfig = {
     ENCHANT_TEAMUP = true,
     ENCHANT_TEAMUP_TIER = 3,
 
-    AUTO_BOUNTY_RIFT = false,
-    MIN_RIFT_MULTIPLIER = 10,
+    AUTO_BOUNTY_RIFT = true,
+    MIN_RIFT_MULTIPLIER = 25,
     HATCH_1X_EGG = {"Candy Egg"},
     ALWAYS_INFINITY_ELIXIR = true,
     ALWAYS_EGG_ELIXIR = true,
     ALWAYS_SECRET_ELIXIR = false,
+
+    SUMMON_RIFT_EGG = "Hell Egg",  -- Egg Name
+    SUMMON_RIFT_LUCK = 25,  -- Luck 5, 10, 15, 20, 25 
+    SUMMON_RIFT_TIME = 30,  -- Time 10, 15, 20, 25, 30
 
     ENABLE_EXIT = false,
     DO_BUBBLE_GUM = false,
