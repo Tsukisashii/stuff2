@@ -42,16 +42,6 @@ getgenv().bgsInfConfig = {
     SUMMON_RIFT_LUCK = 25,  -- Luck 5, 10, 15, 20, 25 
     SUMMON_RIFT_TIME = 30,  -- Time 10, 15, 20, 25, 30
 
-    ENABLE_EXIT = false,
-    DO_BUBBLE_GUM = false,
-    IGNORE_WORLD_CHEST = false,
-    SERVERHOP_EGG = false,
-    IGNORE_EQUIP_BEST_PET = true,
-    AUTO_BOUNTY_1X = false,
-    AUTO_COLLECT_WORLD_REWARDS = false,
-    IGNORE_SEASON_CHALLENGES = false,
-    AUTO_INDEX = true,
-
     WEBHOOK_URL = "https://discord.com/api/webhooks/1400470775592521798/-48oF_gPY30E3FhwJY8djz4k6eD64ZOgaWCmKHWzf9cW1nQN53WUoq0aOmd2JGWRJXWP",
     DISCORD_ID = "",
     WEBHOOK_NOTE = "",
