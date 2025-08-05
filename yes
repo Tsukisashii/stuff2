@@ -28,7 +28,7 @@ getgenv().bgsInfConfig = {
     DELETE_LEGENDARY_SHINY = true,
     DELETE_LEGENDARY_MYTHIC = true,
 
-    ENCHANT_TEAMUP = true,
+    ENCHANT_TEAMUP = false,
     ENCHANT_TEAMUP_TIER = 3,
 
     AUTO_BOUNTY_RIFT = true,
