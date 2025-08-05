@@ -24,7 +24,7 @@ getgenv().bgsInfConfig = {
 
     RARITY_TO_DELETE = {"Common", "Unique", "Rare", "Epic", "Legendary"},
     RARITY_TO_SHINY = {"Common", "Unique", "Rare", "Epic", "Legendary"},
-    MAX_LEGENDARY_TIER_TO_DELETE = 3,  -- (DO NOT Delete Tier 3+ shiny & mythic, use PETS_TO_DELETE instead)
+    MAX_LEGENDARY_TIER_TO_DELETE = 2,  -- (DO NOT Delete Tier 3+ shiny & mythic, use PETS_TO_DELETE instead)
     PETS_TO_DELETE = {"Virus"},
     DELETE_LEGENDARY_SHINY = true,
     DELETE_LEGENDARY_MYTHIC = true,
