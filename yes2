@@ -16,11 +16,10 @@ getgenv().bgsInfConfig = {
     PURCHASE_STARSHOP_SLOT = 14,
     RESTOCK_SHOP = "Festival Shop",
 
-    USE_ROYAL_KEY = false,
+    USE_ROYAL_KEY = true,
     USE_DICE_KEY = true,
     USE_SUPER_KEY = true,
     USE_MYSTERY_BOX = true,
-    IGNORE_MYSTERY_BOX_GEM_CAP = false,
 
     RARITY_TO_DELETE = {"Common", "Unique", "Rare", "Epic", "Legendary"},
     RARITY_TO_SHINY = {"Common", "Unique", "Rare", "Epic", "Legendary"},
@@ -33,12 +32,14 @@ getgenv().bgsInfConfig = {
 
     AUTO_BOUNTY_RIFT = true,
     MIN_RIFT_MULTIPLIER = 10,
+    RIFT_EGGS = {"Bee Egg"},
     HATCH_1X_EGG = {"Candy Egg"},
     ALWAYS_INFINITY_ELIXIR = true,
     ALWAYS_EGG_ELIXIR = true,
     ALWAYS_SECRET_ELIXIR = false,
 
-    AUTO_INDEX = true,
+    IGNORE_MYSTERY_BOX_GEM_CAP = false,
+    IGNORE_EQUIP_BEST_PET = true,
     IGNORE_SEASON_CHALLENGES = true,
 
     WEBHOOK_URL = "https://discord.com/api/webhooks/1400470775592521798/-48oF_gPY30E3FhwJY8djz4k6eD64ZOgaWCmKHWzf9cW1nQN53WUoq0aOmd2JGWRJXWP",
