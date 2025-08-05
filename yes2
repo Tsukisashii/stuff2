@@ -38,6 +38,7 @@ getgenv().bgsInfConfig = {
     HATCH_1X_EGG = {"Candy Egg"},
     ALWAYS_INFINITY_ELIXIR = true,
     ALWAYS_EGG_ELIXIR = true,
+    ALWAYS_SECRET_ELIXIR = false,
 
     IGNORE_EQUIP_BEST_PET = false,
     IGNORE_SEASON_CHALLENGES = true,
