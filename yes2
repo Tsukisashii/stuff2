@@ -32,7 +32,7 @@ getgenv().bgsInfConfig = {
     ENCHANT_TEAMUP = true,
     ENCHANT_TEAMUP_TIER = 3,
 
-    AUTO_BOUNTY_RIFT = true,
+    AUTO_BOUNTY_RIFT = false,
     MIN_RIFT_MULTIPLIER = 10,
     RIFT_EGGS = {"Bee Egg"},
     HATCH_1X_EGG = {"Candy Egg"},
