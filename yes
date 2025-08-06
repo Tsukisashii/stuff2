@@ -35,9 +35,9 @@ getgenv().bgsInfConfig = {
     AUTO_BOUNTY_RIFT = true,
     MIN_RIFT_MULTIPLIER = 25,
     HATCH_1X_EGG = {"Candy Egg"},
+    ALWAYS_SECRET_ELIXIR = false,
     ALWAYS_INFINITY_ELIXIR = true,
     ALWAYS_EGG_ELIXIR = true,
-    ALWAYS_SECRET_ELIXIR = false,
 
     IGNORE_SEASON_CHALLENGES = true,
     IGNORE_EQUIP_BEST_PET = true,
