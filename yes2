@@ -6,8 +6,8 @@ getgenv().bgsInfConfig = {
     AUTO_UPDATE_RESTART = true,
     FOCUS_DICE = true,
     SUPER_TICKET_MINIGAME = "Robot Claw",
-    GIVE_BUBBLE_SHRINE = {"Coins", "Tickets", "Mythic", "Speed", "Lucky"},
-    MIN_GIVE_BUBBLE_SHRINE = 2000,
+    GIVE_BUBBLE_SHRINE = {"Coins", "Tickets"},
+    MIN_GIVE_BUBBLE_SHRINE = 1000,
     AUTO_INDEX = {"The Overworld", "Minigame Paradise"},
 
     PURCHASE_ALIENSHOP = true,
