@@ -1,6 +1,6 @@
 script_key="FVWMxbODmkelIEkcRvtLkxOAJutcEVAx";
 getgenv().bgsInfConfig = {
-    JOB_ID = "85896571713843",
+    JOB_ID = "",
     USERNAME_TO_TRADE = "Tsukisashi",
 
     GIVE_SECRET = true,
