@@ -1,8 +1,13 @@
 script_key="FVWMxbODmkelIEkcRvtLkxOAJutcEVAx";
 setfpscap(3)  -- number = fps
 
-FOCUS_DICE = true, 
-USE_DICE_KEY = true,
-IGNORE_MINIGAME = false,  -- Ignore all "world 2" mini games
-SUPER_TICKET_MINIGAME = "Robot Claw",  -- Use Super Ticket -> "Pet Match" | "Cart Escape" | "Robot Claw" | "Hyper Darts"
-STOP_MINIGAME_INFINITY_ELIXIR = 9999,  -- Stops after specified amount of infinity elixir in inventory
+getgenv().bgsInfConfig = {
+    FOCUS_DICE = true, 
+    USE_DICE_KEY = true,
+    IGNORE_MINIGAME = false,  -- Ignore all "world 2" mini games
+    SUPER_TICKET_MINIGAME = "Robot Claw",  -- Use Super Ticket -> "Pet Match" | "Cart Escape" | "Robot Claw" | "Hyper Darts"
+    STOP_MINIGAME_INFINITY_ELIXIR = 9999,  -- Stops after specified amount of infinity elixir in inventory
+
+}
+
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/e2d15fd8d5fd053a359cc3e296c68150.lua"))() 
