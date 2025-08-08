@@ -2,6 +2,7 @@ script_key="FVWMxbODmkelIEkcRvtLkxOAJutcEVAx";
 setfpscap(3)  -- number = fps
 
 getgenv().bgsInfConfig = {
+    MASTERY_BUFFS_LEVEL = 20,  
     FOCUS_DICE = true, 
     USE_DICE_KEY = true,
     IGNORE_MINIGAME = false,  -- Ignore all "world 2" mini games
