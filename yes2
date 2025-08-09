@@ -10,6 +10,7 @@ getgenv().bgsInfConfig = {
     MASTERY_BUFFS_LEVEL = 20,  
     IGNORE_SEASON_CHALLENGES = true,
     IGNORE_EQUIP_BEST_PET = false,
+    IGNORE_MYSTERY_BOX_GEM_CAP = false, 
 
     WEBHOOK_URL = "https://discord.com/api/webhooks/1400470775592521798/-48oF_gPY30E3FhwJY8djz4k6eD64ZOgaWCmKHWzf9cW1nQN53WUoq0aOmd2JGWRJXWP",
     DISCORD_ID = "701390021898534912",
