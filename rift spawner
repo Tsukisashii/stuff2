@@ -5,7 +5,7 @@ local args = {
         Time = 5,
         Name = "Neon Egg",
         Luck = 5,
-        World = "The Overworld"
+        World = "Minigame Paradise"
     }
 }
 
