@@ -1,9 +1,6 @@
 setfpscap(3)  -- number = fps
 
 getgenv().bgsInfConfig = {
-    setfpscap(3)  -- number = fps
-
-getgenv().bgsInfConfig = {
     ADD_FRIEND = true,
     AUTO_UPDATE_RESTART = true,
     FOCUS_DICE = true,
