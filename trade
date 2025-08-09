@@ -1,4 +1,3 @@
-script_key="FVWMxbODmkelIEkcRvtLkxOAJutcEVAx";
 getgenv().bgsInfConfig = {
     JOB_ID = "",
     USERNAME_TO_TRADE = "Tsukisashi",
@@ -13,4 +12,4 @@ getgenv().bgsInfConfig = {
     MIN_LEGENDARY_TIER_TO_GIVE = 3,
 }
 
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/aa119a1c38fa7f544a2ce750cd72ad87.lua"))()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/e1f274825da00b92599872de596f1fc0.lua"))()
