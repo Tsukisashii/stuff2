@@ -1,44 +1,7 @@
 setfpscap(3)  -- number = fps
 
 getgenv().bgsInfConfig = {
-    ADD_FRIEND = true,
-    AUTO_UPDATE_RESTART = true,
-    FOCUS_DICE = true,
-    SUPER_TICKET_MINIGAME = "Robot Claw",
-    GIVE_BUBBLE_SHRINE = {"Coins", "Tickets"},
-    MIN_GIVE_BUBBLE_SHRINE = 1000,
-    MASTERY_BUFFS_LEVEL = 20, 
-    
-    PURCHASE_ALIENSHOP = true,
-    PURCHASE_BLACKMARKET = true,
-    PURCHASE_DICE_MERCHANT = true,
-    PURCHASE_TRAVELING_MERCHANT = true,
-    PURCHASE_STARSHOP_SLOT = 14,
-    RESTOCK_SHOP = "Festival Shop",
-
-    USE_ROYAL_KEY = true,
-    USE_DICE_KEY = true,
-    USE_SUPER_KEY = true,
     USE_MYSTERY_BOX = true,
-
-    RARITY_TO_DELETE = {"Common", "Unique", "Rare", "Epic", "Legendary"},
-    RARITY_TO_SHINY = {"Common", "Unique", "Rare", "Epic", "Legendary"},
-    MAX_LEGENDARY_TIER_TO_DELETE = 3,  -- (DO NOT Delete Tier 3+ shiny & mythic, use PETS_TO_DELETE instead)
-    DELETE_LEGENDARY_SHINY = true,
-    DELETE_LEGENDARY_MYTHIC = true,
-
-    ENCHANT_TEAMUP = true,
-    ENCHANT_TEAMUP_TIER = 3,
-
-    AUTO_BOUNTY_RIFT = true,
-    MIN_RIFT_MULTIPLIER = 10,
-    HATCH_1X_EGG = {"Neon Egg"},
-    ALWAYS_INFINITY_ELIXIR = true,
-    ALWAYS_EGG_ELIXIR = false,
-    ALWAYS_SECRET_ELIXIR = false,
-
-    IGNORE_SEASON_CHALLENGES = true,
-    IGNORE_EQUIP_BEST_PET = true,
 
     WEBHOOK_URL = "https://discord.com/api/webhooks/1400470775592521798/-48oF_gPY30E3FhwJY8djz4k6eD64ZOgaWCmKHWzf9cW1nQN53WUoq0aOmd2JGWRJXWP",
     DISCORD_ID = "701390021898534912",
