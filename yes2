@@ -32,13 +32,13 @@ getgenv().bgsInfConfig = {
 
     AUTO_BOUNTY_RIFT = true,
     MIN_RIFT_MULTIPLIER = 10,
-    HATCH_1X_EGG = {"Neon Egg"},
+    HATCH_1X_EGG = {"Cyber Egg"},
     ALWAYS_INFINITY_ELIXIR = true,
     ALWAYS_EGG_ELIXIR = false,
     ALWAYS_SECRET_ELIXIR = false,
 
     IGNORE_SEASON_CHALLENGES = true,
-    IGNORE_EQUIP_BEST_PET = true,
+    IGNORE_EQUIP_BEST_PET = false,
 
     WEBHOOK_URL = "https://discord.com/api/webhooks/1400470775592521798/-48oF_gPY30E3FhwJY8djz4k6eD64ZOgaWCmKHWzf9cW1nQN53WUoq0aOmd2JGWRJXWP",
     DISCORD_ID = "701390021898534912",
