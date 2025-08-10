@@ -32,7 +32,7 @@ getgenv().bgsInfConfig = {
 
     AUTO_BOUNTY_RIFT = true,
     MIN_RIFT_MULTIPLIER = 10,
-    HATCH_1X_EGG = {"Neon Egg"},
+    HATCH_1X_EGG = {"Cyber Egg"},
     ALWAYS_INFINITY_ELIXIR = true,
     ALWAYS_EGG_ELIXIR = false,
     ALWAYS_SECRET_ELIXIR = false,
