@@ -1,8 +1,8 @@
 setfpscap(3)  -- number = fps
 
 getgenv().bgsInfConfig = {
-    USE_MYSTERY_BOX = true,
     MASTERY_BUFFS_LEVEL = 20,  
+    USE_MYSTERY_BOX = true,
     IGNORE_SEASON_CHALLENGES = true,
     IGNORE_EQUIP_BEST_PET = false,
     IGNORE_MYSTERY_BOX_GEM_CAP = false, 
