@@ -3,7 +3,7 @@ local args = {
     {
         Type = "Egg",
         Time = 5,
-        Name = "Cyber Egg",
+        Name = "Nightmare Egg",
         Luck = 5,
         World = "Minigame Paradise"
     }
