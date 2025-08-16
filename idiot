@@ -30,14 +30,16 @@ task.spawn(function()
     end
 end)
 
--- Continuous E spam loop (runs on its own heartbeat)
+-- Continuous E spam loop (with stable timing)
 task.spawn(function()
-    game:GetService("RunService").Heartbeat:Connect(function()
+    while true do
         pcall(function()
             vim:SendKeyEvent(true, Enum.KeyCode.E, false, game)
+            task.wait(0.05)
             vim:SendKeyEvent(false, Enum.KeyCode.E, false, game)
         end)
-    end)
+        task.wait(0.1) -- adjust this for faster/slower spam
+    end
 end)
 
 -- Auto sell loop
