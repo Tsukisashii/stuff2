@@ -8,42 +8,29 @@ local args = {
 game:GetService("ReplicatedStorage")
     .Shared.Framework.Network.Remote.RemoteEvent:FireServer(unpack(args))
 
+-- Load external script
+loadstring(game:HttpGet("https://raw.githubusercontent.com/IdiotHub/Scripts/refs/heads/main/BGSI/main.lua"))()
+
 -- Teleport player
 local player = game:GetService("Players").LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
 humanoidRootPart.CFrame = CFrame.new(-13945.51, 14.02, -20254.77)
 
--- Load external script (now placed right after TP)
-loadstring(game:HttpGet("https://raw.githubusercontent.com/IdiotHub/Scripts/refs/heads/main/BGSI/main.lua"))()
-
 local remote = game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.RemoteEvent
-local virtualUser = game:GetService("VirtualUser")
-local runService = game:GetService("RunService")
 
 -- Auto equip loop
 task.spawn(function()
-    while task.wait(10) do
+    while task.wait(10) do -- equip every 10s
         pcall(function()
             remote:FireServer("EquipBestPets")
         end)
     end
 end)
 
--- Continuous R spam loop (never stops, frame-based)
-task.spawn(function()
-    runService.RenderStepped:Connect(function()
-        pcall(function()
-            virtualUser:CaptureController()
-            virtualUser:SetKeyDown("E")
-            virtualUser:SetKeyUp("E")
-        end)
-    end)
-end)
-
 -- Auto sell loop
 task.spawn(function()
-    while task.wait(5) do
+    while task.wait(5) do -- sell every 5s
         pcall(function()
             remote:FireServer("SellAllFish")
         end)
