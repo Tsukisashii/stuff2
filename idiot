@@ -41,7 +41,7 @@ end)
 task.spawn(function()
     while task.wait(0.1) do
         pcall(function()
-            remote:FireServer("HatchEgg", "Atlantis Egg", 7)
+            remote:FireServer("HatchEgg", "Atlantis Egg")
         end)
     end
 end)
