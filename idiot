@@ -22,14 +22,6 @@ humanoidRootPart.CFrame = CFrame.new(-13945.51, 14.02, -20254.77)
 -- Load external script
 loadstring(game:HttpGet("https://raw.githubusercontent.com/IdiotHub/Scripts/refs/heads/main/BGSI/main.lua"))()
 
--- Remote reference
-local remote = game:GetService("ReplicatedStorage")
-    :WaitForChild("Shared")
-    :WaitForChild("Framework")
-    :WaitForChild("Network")
-    :WaitForChild("Remote")
-    :WaitForChild("RemoteEvent")
-
 -- Auto equip loop
 task.spawn(function()
     while task.wait(10) do
