@@ -18,32 +18,32 @@ local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
 humanoidRootPart.CFrame = CFrame.new(-13945.51, 14.02, -20254.77)
 
 local remote = game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.RemoteEvent
-local virtualUser = game:GetService("VirtualUser")
+local vim = game:GetService("VirtualInputManager")
 
 -- Auto equip loop
 task.spawn(function()
-    while task.wait(10) do -- equip every 10s
+    while task.wait(10) do
         pcall(function()
             remote:FireServer("EquipBestPets")
         end)
     end
 end)
 
--- Continuous E spam loop (starts immediately)
+-- Continuous E spam loop (NEVER stops)
 task.spawn(function()
-    while task.wait(0.1) do
+    while true do
         pcall(function()
-            virtualUser:CaptureController()
-            virtualUser:SetKeyDown("E")
+            vim:SendKeyEvent(true, Enum.KeyCode.E, false, game) -- key down
             task.wait(0.05)
-            virtualUser:SetKeyUp("E")
+            vim:SendKeyEvent(false, Enum.KeyCode.E, false, game) -- key up
         end)
+        task.wait(0.05) -- delay between presses
     end
 end)
 
 -- Auto sell loop
 task.spawn(function()
-    while task.wait(5) do -- sell every 5s
+    while task.wait(5) do
         pcall(function()
             remote:FireServer("SellAllFish")
         end)
