@@ -1,0 +1,31 @@
+setfpscap(6)
+
+-- Unlock world
+local args = {
+    "UnlockWorld",
+    "Seven Seas"
+}
+game:GetService("ReplicatedStorage")
+    :WaitForChild("Shared")
+    :WaitForChild("Framework")
+    :WaitForChild("Network")
+    :WaitForChild("Remote")
+    :WaitForChild("RemoteEvent")
+    :FireServer(unpack(args))
+
+-- Teleport player
+local player = game:GetService("Players").LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+humanoidRootPart.CFrame = CFrame.new(-13945.51, 14.02, -20254.77)
+
+-- Load external script
+loadstring(game:HttpGet("https://raw.githubusercontent.com/IdiotHub/Scripts/refs/heads/main/BGSI/main.lua"))()
+
+-- Auto sell loop
+task.spawn(function()
+    while task.wait(5) do
+        pcall(function()
+            remote:FireServer("SellAllFish")
+        end)
+    end
