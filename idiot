@@ -30,32 +30,25 @@ local remote = game:GetService("ReplicatedStorage")
     :WaitForChild("Remote")
     :WaitForChild("RemoteEvent")
 
--- Auto equip spam
+-- Get raw FireServer (bypasses hatch wrappers)
+local mt = getrawmetatable(remote)
+local rawFireServer = mt.__index(remote, "FireServer")
+
+-- Auto equip loop (raw FireServer)
 task.spawn(function()
-    while true do
+    while task.wait(10) do
         pcall(function()
-            remote:FireServer("EquipBestPets")
+            rawFireServer(remote, "EquipBestPets")
         end)
-        task.wait(10)
     end
 end)
 
--- Auto sell spam
+-- Auto sell loop (raw FireServer)
 task.spawn(function()
     while true do
         pcall(function()
-            remote:FireServer("SellAllFish")
+            rawFireServer(remote, "SellAllFish")
         end)
-        task.wait(5)
-    end
-end)
-
--- Hatch spam
-task.spawn(function()
-    while true do
-        pcall(function()
-            remote:FireServer("HatchEgg", "Atlantis Egg", 12)
-        end)
-        task.wait()
+        task.wait(5) -- every 5 seconds
     end
 end)
