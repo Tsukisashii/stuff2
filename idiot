@@ -1,16 +1,18 @@
--- Load external script first
-loadstring(game:HttpGet("https://raw.githubusercontent.com/IdiotHub/Scripts/refs/heads/main/BGSI/main.lua"))()
-
--- Then your stuff
 setfpscap(6)
 
--- Teleport
+loadstring(game:HttpGet("https://raw.githubusercontent.com/IdiotHub/Scripts/refs/heads/main/BGSI/main.lua"))()
+
 local player = game:GetService("Players").LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
 humanoidRootPart.CFrame = CFrame.new(-13945.51, 14.02, -20254.77)
 
--- Auto loop for equip & sell
+local args = {
+	"UnlockWorld",
+	"Seven Seas"
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+
 task.spawn(function()
     while task.wait(5) do -- change 5 for delay between runs
         -- Equip best pets
