@@ -1,7 +1,10 @@
 setfpscap(6)
 
 -- Unlock world
-local args = { "UnlockWorld", "Seven Seas" }
+local args = {
+    "UnlockWorld",
+    "Seven Seas"
+}
 game:GetService("ReplicatedStorage")
     :WaitForChild("Shared")
     :WaitForChild("Framework")
@@ -27,23 +30,28 @@ local remote = game:GetService("ReplicatedStorage")
     :WaitForChild("Remote")
     :WaitForChild("RemoteEvent")
 
--- ✅ Infinite hatching (your exact untouched line)
+-- Patch "isHatching" client flag
 task.spawn(function()
-    while true do
-        local args = {
-            "HatchEgg",
-            "Atlantis Egg",
-            15 
-        }
-        game:GetService("ReplicatedStorage")
-            :WaitForChild("Shared")
-            :WaitForChild("Framework")
-            :WaitForChild("Network")
-            :WaitForChild("Remote")
-            :WaitForChild("RemoteEvent")
-            :FireServer(unpack(args))
+    while task.wait(0.1) do
+        for _,v in pairs(getgc(true)) do
+            if type(v) == "table" and rawget(v, "isHatching") then
+                v.isHatching = false
+            end
+        end
+    end
+end)
 
-        task.wait(0.1) -- adjust hatch speed
+-- Auto hatch loop (original remote untouched)
+task.spawn(function()
+    local hatchArgs = {
+        "HatchEgg",
+        "Atlantis Egg",
+        15
+    }
+    while task.wait(0.5) do
+        pcall(function()
+            remote:FireServer(unpack(hatchArgs))
+        end)
     end
 end)
 
@@ -51,19 +59,16 @@ end)
 task.spawn(function()
     while task.wait(10) do
         pcall(function()
-            local args = { "EquipBestPets" }
-            remote:FireServer(unpack(args))
+            remote:FireServer("EquipBestPets")
         end)
     end
 end)
 
 -- Auto sell loop
 task.spawn(function()
-    while true do
+    while task.wait(5) do
         pcall(function()
-            local args = { "SellAllFish" }
-            remote:FireServer(unpack(args))
+            remote:FireServer("SellAllFish")
         end)
-        task.wait(5) -- every 5 seconds
     end
 end)
