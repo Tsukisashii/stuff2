@@ -1,10 +1,7 @@
 setfpscap(6)
 
 -- Unlock world
-local args = {
-    "UnlockWorld",
-    "Seven Seas"
-}
+local args = { "UnlockWorld", "Seven Seas" }
 game:GetService("ReplicatedStorage")
     :WaitForChild("Shared")
     :WaitForChild("Framework")
@@ -30,25 +27,43 @@ local remote = game:GetService("ReplicatedStorage")
     :WaitForChild("Remote")
     :WaitForChild("RemoteEvent")
 
--- Get raw FireServer (used ONLY for selling)
-local mt = getrawmetatable(remote)
-local rawFireServer = mt.__index(remote, "FireServer")
+-- ✅ Infinite hatching (your exact untouched line)
+task.spawn(function()
+    while true do
+        local args = {
+            "HatchEgg",
+            "Atlantis Egg",
+            15 
+        }
+        game:GetService("ReplicatedStorage")
+            :WaitForChild("Shared")
+            :WaitForChild("Framework")
+            :WaitForChild("Network")
+            :WaitForChild("Remote")
+            :WaitForChild("RemoteEvent")
+            :FireServer(unpack(args))
 
--- Auto equip loop (normal FireServer so hatch isn’t broken)
+        task.wait(0.1) -- adjust hatch speed
+    end
+end)
+
+-- Auto equip loop
 task.spawn(function()
     while task.wait(10) do
         pcall(function()
-            remote:FireServer("EquipBestPets")
+            local args = { "EquipBestPets" }
+            remote:FireServer(unpack(args))
         end)
     end
 end)
 
--- Auto sell loop (raw FireServer so it bypasses hatch blocking)
+-- Auto sell loop
 task.spawn(function()
     while true do
         pcall(function()
-            rawFireServer(remote, "SellAllFish")
+            local args = { "SellAllFish" }
+            remote:FireServer(unpack(args))
         end)
-        task.wait(5)
+        task.wait(5) -- every 5 seconds
     end
 end)
