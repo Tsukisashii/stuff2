@@ -22,30 +22,30 @@ local vim = game:GetService("VirtualInputManager")
 
 -- Auto equip loop
 task.spawn(function()
-    while task.wait(10) do
+    while true do
         pcall(function()
             remote:FireServer("EquipBestPets")
         end)
+        task.wait(10)
     end
 end)
 
--- Continuous E spam loop (NEVER stops)
+-- Continuous E spam loop (runs on its own heartbeat)
 task.spawn(function()
-    while true do
+    game:GetService("RunService").Heartbeat:Connect(function()
         pcall(function()
-            vim:SendKeyEvent(true, Enum.KeyCode.E, false, game) -- key down
-            task.wait(0.05)
-            vim:SendKeyEvent(false, Enum.KeyCode.E, false, game) -- key up
+            vim:SendKeyEvent(true, Enum.KeyCode.E, false, game)
+            vim:SendKeyEvent(false, Enum.KeyCode.E, false, game)
         end)
-        task.wait(0.05) -- delay between presses
-    end
+    end)
 end)
 
 -- Auto sell loop
 task.spawn(function()
-    while task.wait(5) do
+    while true do
         pcall(function()
             remote:FireServer("SellAllFish")
         end)
+        task.wait(5)
     end
 end)
