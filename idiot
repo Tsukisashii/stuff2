@@ -1,0 +1,24 @@
+task.spawn(function()
+    while task.wait(5) do -- change 5 to how many seconds you want between runs
+        local args = { "EquipBestPets" }
+        game:GetService("ReplicatedStorage"):WaitForChild("Shared")
+            :WaitForChild("Framework"):WaitForChild("Network")
+            :WaitForChild("Remote"):WaitForChild("RemoteEvent")
+            :FireServer(unpack(args))
+
+        args = { "SellAllFish" }
+        game:GetService("ReplicatedStorage"):WaitForChild("Shared")
+            :WaitForChild("Framework"):WaitForChild("Network")
+            :WaitForChild("Remote"):WaitForChild("RemoteEvent")
+            :FireServer(unpack(args))
+    end
+end)
+
+setfpscap(6)
+
+local player = game:GetService("Players").LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+humanoidRootPart.CFrame = CFrame.new(-13945.51, 14.02, -20254.77)
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/IdiotHub/Scripts/refs/heads/main/BGSI/main.lua"))()
