@@ -2,8 +2,8 @@ setfpscap(6)
 
 -- Unlock world
 local args = {
-	"UnlockWorld",
-	"Seven Seas"
+    "UnlockWorld",
+    "Seven Seas"
 }
 game:GetService("ReplicatedStorage")
     .Shared.Framework.Network.Remote.RemoteEvent:FireServer(unpack(args))
@@ -17,19 +17,35 @@ local character = player.Character or player.CharacterAdded:Wait()
 local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
 humanoidRootPart.CFrame = CFrame.new(-13945.51, 14.02, -20254.77)
 
--- Auto equip + sell loop
+local remote = game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.RemoteEvent
+local virtualUser = game:GetService("VirtualUser")
+
+-- Auto equip loop
 task.spawn(function()
-    while task.wait(5) do -- every 5 seconds
-        -- Equip best pets
+    while task.wait(10) do -- equip every 10s
         pcall(function()
-            game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.RemoteEvent:FireServer("EquipBestPets")
+            remote:FireServer("EquipBestPets")
         end)
+    end
+end)
 
-        task.wait(1) -- small delay between calls
-
-        -- Sell all fish
+-- Continuous E spam loop (starts immediately)
+task.spawn(function()
+    while task.wait(0.1) do
         pcall(function()
-            game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.RemoteEvent:FireServer("SellAllFish")
+            virtualUser:CaptureController()
+            virtualUser:SetKeyDown("E")
+            task.wait(0.05)
+            virtualUser:SetKeyUp("E")
+        end)
+    end
+end)
+
+-- Auto sell loop
+task.spawn(function()
+    while task.wait(5) do -- sell every 5s
+        pcall(function()
+            remote:FireServer("SellAllFish")
         end)
     end
 end)
