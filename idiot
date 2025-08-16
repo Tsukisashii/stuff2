@@ -8,40 +8,44 @@ local args = {
 game:GetService("ReplicatedStorage")
     .Shared.Framework.Network.Remote.RemoteEvent:FireServer(unpack(args))
 
--- Load external script
-loadstring(game:HttpGet("https://raw.githubusercontent.com/IdiotHub/Scripts/refs/heads/main/BGSI/main.lua"))()
-
 -- Teleport player
 local player = game:GetService("Players").LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
 humanoidRootPart.CFrame = CFrame.new(-13945.51, 14.02, -20254.77)
 
+-- Load external script (now placed right after TP)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/IdiotHub/Scripts/refs/heads/main/BGSI/main.lua"))()
+
 local remote = game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.RemoteEvent
+local virtualUser = game:GetService("VirtualUser")
+local runService = game:GetService("RunService")
 
 -- Auto equip loop
 task.spawn(function()
-    while task.wait(10) do -- equip every 10s
+    while task.wait(10) do
         pcall(function()
             remote:FireServer("EquipBestPets")
         end)
     end
 end)
 
--- Auto sell loop
+-- Continuous R spam loop (never stops, frame-based)
 task.spawn(function()
-    while task.wait(5) do -- sell every 5s
+    runService.RenderStepped:Connect(function()
         pcall(function()
-            remote:FireServer("SellAllFish")
+            virtualUser:CaptureController()
+            virtualUser:SetKeyDown("R")
+            virtualUser:SetKeyUp("R")
         end)
-    end
+    end)
 end)
 
--- Auto hatch Atlantis Egg
+-- Auto sell loop
 task.spawn(function()
-    while task.wait(0.1) do
+    while task.wait(5) do
         pcall(function()
-            remote:FireServer("HatchEgg", "Atlantis Egg")
+            remote:FireServer("SellAllFish")
         end)
     end
 end)
