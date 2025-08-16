@@ -30,31 +30,6 @@ local remote = game:GetService("ReplicatedStorage")
     :WaitForChild("Remote")
     :WaitForChild("RemoteEvent")
 
--- Patch "isHatching" client flag
-task.spawn(function()
-    while task.wait(0.1) do
-        for _,v in pairs(getgc(true)) do
-            if type(v) == "table" and rawget(v, "isHatching") then
-                v.isHatching = false
-            end
-        end
-    end
-end)
-
--- Auto hatch loop (original remote untouched)
-task.spawn(function()
-    local hatchArgs = {
-        "HatchEgg",
-        "Atlantis Egg",
-        15
-    }
-    while task.wait(0.5) do
-        pcall(function()
-            remote:FireServer(unpack(hatchArgs))
-        end)
-    end
-end)
-
 -- Auto equip loop
 task.spawn(function()
     while task.wait(10) do
