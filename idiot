@@ -1,5 +1,11 @@
 setfpscap(6)
 
+-- Teleport player
+local player = game:GetService("Players").LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+humanoidRootPart.CFrame = CFrame.new(-13945.51, 14.02, -20254.77)
+
 -- Unlock world
 local args = {
     "UnlockWorld",
@@ -10,12 +16,6 @@ game:GetService("ReplicatedStorage")
 
 -- Load external script
 loadstring(game:HttpGet("https://raw.githubusercontent.com/IdiotHub/Scripts/refs/heads/main/BGSI/main.lua"))()
-
--- Teleport player
-local player = game:GetService("Players").LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
-local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
-humanoidRootPart.CFrame = CFrame.new(-13945.51, 14.02, -20254.77)
 
 local remote = game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.RemoteEvent
 local vim = game:GetService("VirtualInputManager")
