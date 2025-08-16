@@ -1,11 +1,5 @@
 setfpscap(6)
 
--- Teleport player
-local player = game:GetService("Players").LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
-local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
-humanoidRootPart.CFrame = CFrame.new(-13945.51, 14.02, -20254.77)
-
 -- Unlock world
 local args = {
     "UnlockWorld",
@@ -17,43 +11,37 @@ game:GetService("ReplicatedStorage")
 -- Load external script
 loadstring(game:HttpGet("https://raw.githubusercontent.com/IdiotHub/Scripts/refs/heads/main/BGSI/main.lua"))()
 
+-- Teleport player
+local player = game:GetService("Players").LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+humanoidRootPart.CFrame = CFrame.new(-13945.51, 14.02, -20254.77)
+
 local remote = game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.RemoteEvent
-local vim = game:GetService("VirtualInputManager")
 
 -- Auto equip loop
 task.spawn(function()
-    while true do
+    while task.wait(10) do -- equip every 10s
         pcall(function()
             remote:FireServer("EquipBestPets")
         end)
-        task.wait(10)
-    end
-end)
-
--- Continuous E spam loop (anti-throttle)
-task.spawn(function()
-    while true do
-        pcall(function()
-            -- Press E
-            vim:SendKeyEvent(true, Enum.KeyCode.E, false, game)
-            task.wait(0.03)
-            vim:SendKeyEvent(false, Enum.KeyCode.E, false, game)
-
-            -- Small trick: press another harmless key to avoid suppression
-            vim:SendKeyEvent(true, Enum.KeyCode.Unknown, false, game)
-            vim:SendKeyEvent(false, Enum.KeyCode.Unknown, false, game)
-        end)
-
-        task.wait(0.1 + math.random() * 0.05) -- random delay helps bypass filtering
     end
 end)
 
 -- Auto sell loop
 task.spawn(function()
-    while true do
+    while task.wait(5) do -- sell every 5s
         pcall(function()
             remote:FireServer("SellAllFish")
         end)
-        task.wait(5)
+    end
+end)
+
+-- Auto hatch Atlantis Egg
+task.spawn(function()
+    while task.wait(0.1) do
+        pcall(function()
+            remote:FireServer("HatchEgg", "Atlantis Egg", 7)
+        end)
     end
 end)
