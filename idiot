@@ -8,31 +8,47 @@ local args = {
 game:GetService("ReplicatedStorage")
     .Shared.Framework.Network.Remote.RemoteEvent:FireServer(unpack(args))
 
--- Load external script
-loadstring(game:HttpGet("https://raw.githubusercontent.com/IdiotHub/Scripts/refs/heads/main/BGSI/main.lua"))()
-
 -- Teleport player
 local player = game:GetService("Players").LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
 humanoidRootPart.CFrame = CFrame.new(-13945.51, 14.02, -20254.77)
 
+-- Load external script
+loadstring(game:HttpGet("https://raw.githubusercontent.com/IdiotHub/Scripts/refs/heads/main/BGSI/main.lua"))()
+
 local remote = game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.RemoteEvent
 
 -- Auto equip loop
 task.spawn(function()
-    while task.wait(10) do -- equip every 10s
+    while task.wait(10) do
         pcall(function()
             remote:FireServer("EquipBestPets")
         end)
     end
 end)
 
--- Auto sell loop
+-- Normal auto sell loop
 task.spawn(function()
-    while task.wait(5) do -- sell every 5s
+    while task.wait(5) do
         pcall(function()
             remote:FireServer("SellAllFish")
         end)
     end
+end)
+
+-- 🔥 Hook into HatchEgg remote to sell IMMEDIATELY after hatching
+local oldFireServer
+oldFireServer = hookmetamethod(remote, "__namecall", function(self, ...)
+    local args = {...}
+    if getnamecallmethod() == "FireServer" and args[1] == "HatchEgg" then
+        -- call original
+        local result = oldFireServer(self, unpack(args))
+        -- instantly sell after hatch
+        task.spawn(function()
+            remote:FireServer("SellAllFish")
+        end)
+        return result
+    end
+    return oldFireServer(self, ...)
 end)
