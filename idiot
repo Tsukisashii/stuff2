@@ -36,19 +36,3 @@ task.spawn(function()
         end)
     end
 end)
-
--- 🔥 Hook into HatchEgg remote to sell IMMEDIATELY after hatching
-local oldFireServer
-oldFireServer = hookmetamethod(remote, "__namecall", function(self, ...)
-    local args = {...}
-    if getnamecallmethod() == "FireServer" and args[1] == "HatchEgg" then
-        -- call original
-        local result = oldFireServer(self, unpack(args))
-        -- instantly sell after hatch
-        task.spawn(function()
-            remote:FireServer("SellAllFish")
-        end)
-        return result
-    end
-    return oldFireServer(self, ...)
-end)
