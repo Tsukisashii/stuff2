@@ -30,15 +30,21 @@ task.spawn(function()
     end
 end)
 
--- Continuous E spam loop (with stable timing)
+-- Continuous E spam loop (anti-throttle)
 task.spawn(function()
     while true do
         pcall(function()
+            -- Press E
             vim:SendKeyEvent(true, Enum.KeyCode.E, false, game)
-            task.wait(0.05)
+            task.wait(0.03)
             vim:SendKeyEvent(false, Enum.KeyCode.E, false, game)
+
+            -- Small trick: press another harmless key to avoid suppression
+            vim:SendKeyEvent(true, Enum.KeyCode.Unknown, false, game)
+            vim:SendKeyEvent(false, Enum.KeyCode.Unknown, false, game)
         end)
-        task.wait(0.1) -- adjust this for faster/slower spam
+
+        task.wait(0.1 + math.random() * 0.05) -- random delay helps bypass filtering
     end
 end)
 
