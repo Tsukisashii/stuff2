@@ -22,6 +22,26 @@ humanoidRootPart.CFrame = CFrame.new(-13945.51, 14.02, -20254.77)
 -- Load external script
 loadstring(game:HttpGet("https://raw.githubusercontent.com/IdiotHub/Scripts/refs/heads/main/BGSI/main.lua"))()
 
+-- Infinite hatching loop
+task.spawn(function()
+    while task.wait() do
+        local hatchArgs = {
+            "HatchEgg",
+            "Atlantis Egg",
+            15
+        }
+        pcall(function()
+            game:GetService("ReplicatedStorage")
+                :WaitForChild("Shared")
+                :WaitForChild("Framework")
+                :WaitForChild("Network")
+                :WaitForChild("Remote")
+                :WaitForChild("RemoteEvent")
+                :FireServer(unpack(hatchArgs))
+        end)
+    end
+end)
+
 -- Auto sell loop
 task.spawn(function()
     while task.wait(5) do
