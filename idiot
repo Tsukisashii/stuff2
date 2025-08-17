@@ -22,6 +22,19 @@ humanoidRootPart.CFrame = CFrame.new(-13945.51, 14.02, -20254.77)
 -- Load external script
 loadstring(game:HttpGet("https://raw.githubusercontent.com/IdiotHub/Scripts/refs/heads/main/BGSI/main.lua"))()
 
+task.spawn(function()
+    local hatchArgs = {
+        "HatchEgg",
+        "Atlantis Egg",
+        15
+    }
+    while task.wait(0.5) do
+        pcall(function()
+            remote:FireServer(unpack(hatchArgs))
+        end)
+    end
+end)
+
 -- Auto equip loop
 task.spawn(function()
     while task.wait(10) do
