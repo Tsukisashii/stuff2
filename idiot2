@@ -25,8 +25,15 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/IdiotHub/Scripts/refs
 -- Auto sell loop
 task.spawn(function()
     while task.wait(5) do
+        local sellArgs = {"SellAllFish"}
         pcall(function()
-            remote:FireServer("SellAllFish")
+            game:GetService("ReplicatedStorage")
+                :WaitForChild("Shared")
+                :WaitForChild("Framework")
+                :WaitForChild("Network")
+                :WaitForChild("Remote")
+                :WaitForChild("RemoteEvent")
+                :FireServer(unpack(sellArgs))
         end)
     end
 end)
