@@ -28,7 +28,7 @@ task.spawn(function()
         "Atlantis Egg",
         15
     }
-    while task.wait(0.5) do
+    while task.wait() do
         pcall(function()
             remote:FireServer(unpack(hatchArgs))
         end)
