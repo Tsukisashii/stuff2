@@ -11,7 +11,7 @@ getgenv().bgsInfConfig = {
     IGNORE_SEASON_CHALLENGES = false,
     IGNORE_EQUIP_BEST_PET = true,
     IGNORE_MYSTERY_BOX_GEM_CAP = false, 
-    HATCH_1X_EGG = {"Mining Egg"},
+    HATCH_1X_EGG = {"Secret Egg"},
 
     WEBHOOK_URL = "https://discord.com/api/webhooks/1400470775592521798/-48oF_gPY30E3FhwJY8djz4k6eD64ZOgaWCmKHWzf9cW1nQN53WUoq0aOmd2JGWRJXWP",
     DISCORD_ID = "701390021898534912",
