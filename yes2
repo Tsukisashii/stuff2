@@ -34,6 +34,7 @@ getgenv().bgsInfConfig = {
     AUTO_BOUNTY_RIFT = true,
     MIN_RIFT_MULTIPLIER = 10,
     HATCH_1X_EGG = {"Infinity Egg"},
+    INFINITY_EGG_TYPE = "World1", 
     ALWAYS_INFINITY_ELIXIR = true,
     ALWAYS_EGG_ELIXIR = false,
     ALWAYS_SECRET_ELIXIR = false,
