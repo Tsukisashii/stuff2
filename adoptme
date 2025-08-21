@@ -1,0 +1,18 @@
+setfpscap(15)
+script_key="workfine";
+getgenv().Config = {
+    ["PetAMountToBuy"] = "999", 
+    ["PetRemoteToBuy"] = "aztec_egg_2025_aztec_egg",
+
+    ["PetFarmAutoSwitchFullGrown"] = false,
+    ["PetFarmActive"] = true,
+    ["LitePetFarmActive"] = false,
+    ["EggFarmActive"] = false,
+    
+    ["HideUselessGui"] = true,
+    ["Blur_username"] = false,
+    ["Blazing_Lion_Log"] = false,
+    ["DiscordId"] = "701390021898534912",
+    ["Webhook"] = "https://discord.com/api/webhooks/1400470775592521798/-48oF_gPY30E3FhwJY8djz4k6eD64ZOgaWCmKHWzf9cW1nQN53WUoq0aOmd2JGWRJXWP",
+}
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/66567bfd337b57eb059b58dbe1badb89.lua"))()
