@@ -41,7 +41,7 @@ getgenv().bgsInfConfig = {
     IGNORE_SEASON_CHALLENGES = false,
     IGNORE_EQUIP_BEST_PET = false,
 
-    WEBHOOK_URL = "https://discord.com/api/webhooks/1400470775592521798/-48oF_gPY30E3FhwJY8djz4k6eD64ZOgaWCmKHWzf9cW1nQN53WUoq0aOmd2JGWRJXWP",
+    WEBHOOK_URL = "https://discord.com/api/webhooks/1408591583007342784/O2UoB1SiIiYM1jFE09FE3Ivb1jdPSP4dmOt6WsfKaAifxFQfsD1b5TFo0ECntCr4Gxwe",
     DISCORD_ID = "701390021898534912",
     WEBHOOK_NOTE = "",
     WEBHOOK_ODDS = "1m",
