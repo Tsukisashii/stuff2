@@ -4,10 +4,10 @@ getgenv().Config = {
     ["PetAMountToBuy"] = "999", 
     ["PetRemoteToBuy"] = "aztec_egg_2025_aztec_egg",
 
-    ["PetFarmAutoSwitchFullGrown"] = false,
-    ["PetFarmActive"] = true,
-    ["LitePetFarmActive"] = false,
-    ["EggFarmActive"] = ,
+    ["PetFarmAutoSwitchFullGrown"] = true,
+    ["PetFarmActive"] = false,
+    ["LitePetFarmActive"] = true,
+    ["EggFarmActive"] = true,
 
     ["HideUselessGui"] = true,
     ["Blur_username"] = false,
