@@ -7,7 +7,7 @@ getgenv().Config = {
     ["PetFarmActive"] = false,
     ["LitePetFarmActive"] = true,
     ["EggFarmActive"] = true,
-    
+
     ["HideUselessGui"] = true,
     ["Blur_username"] = false,
     ["Blazing_Lion_Log"] = false,
