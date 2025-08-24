@@ -10,7 +10,7 @@ local player = Players.LocalPlayer
 local localUsername = player.Name
 
 
-local ACCOUNT_LABEL = "Account 6" 
+local ACCOUNT_LABEL = "Jin" 
 local MAX_PLAYER_COUNT = 
 local RIFT_NAME = ""
 local RIFT_PATH = workspace.Rendered.Rifts
