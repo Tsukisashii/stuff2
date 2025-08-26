@@ -1,3 +1,4 @@
+setfpscap(1)
 script_key="workfine";
 getgenv().Config = {
     ["PetAMountToBuy"] = "999", 
