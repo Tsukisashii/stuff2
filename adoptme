@@ -1,7 +1,8 @@
 script_key="KiMLVjsotIQecKjIEEwuiNGyioKtIqEi";
 getgenv().Config = {
-    ["PetFarmAutoSwitchFullGrown"] = false,
-    ["PetFarmActive"] = true,
+    ["PetFarmAutoSwitchFullGrown"] = true,
+    ["LitePetFarmActive"] = true,
+    ["PetFarmActive"] = false,
     ["EggFarmActive"] = false,
     ["HideUselessGui"] = true,
     ["Blur_username"] = true,
