@@ -1,12 +1,11 @@
-setfpscap(1)
-script_key="workfine";
+script_key="fJUAZRCdMJJdkwhmtSTSOqzdkglUAlwX";
 getgenv().Config = {
-    ["PetAMountToBuy"] = "999", 
+    ["PetAMountToBuy"] = "0", 
     ["PetRemoteToBuy"] = "aztec_egg_2025_aztec_egg",
-    ["PetFarmAutoSwitchFullGrown"] = false,
+    ["PetFarmAutoSwitchFullGrown"] = true,
     ["PetFarmActive"] = false,
-    ["LitePetFarmActive"] = false,
-    ["EggFarmActive"] = true,
+    ["LitePetFarmActive"] = true,
+    ["EggFarmActive"] = false,
     ["HideUselessGui"] = true,
     ["Blur_username"] = false,
     ["Blazing_Lion_Log"] = false,
