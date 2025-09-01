@@ -1,8 +1,8 @@
-script_key="KiMLVjsotIQecKjIEEwuiNGyioKtIqEi";
+script_key="fJUAZRCdMJJdkwhmtSTSOqzdkglUAlwX";
 getgenv().Config = {
     ["PetAMountToBuy"] = "0", 
     ["PetRemoteToBuy"] = "aztec_egg_2025_aztec_egg",
-    ["PetFarmAutoSwitchFullGrown"] = false,
+    ["PetFarmAutoSwitchFullGrown"] = true,
     ["PetFarmActive"] = false,
     ["LitePetFarmActive"] = true,
     ["EggFarmActive"] = false,
