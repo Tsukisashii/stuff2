@@ -1,0 +1,50 @@
+ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+    Name = "Trading Hub",
+    LoadingTitle = "Trading Utilities",
+    LoadingSubtitle = "By YourName",
+    ConfigurationSaving = {
+        Enabled = true,
+        FolderName = "TradingHub",
+        FileName = "Config"
+    },
+    Discord = {
+        Enabled = false,
+        Invite = "noinvitelink",
+        RememberJoins = true
+    },
+    KeySystem = false,
+})
+
+local MainTab = Window:CreateTab("Main", 4483362458)
+
+local TradeServerButton = MainTab:CreateButton({
+    Name = "New Trading Server",
+    Callback = function()
+        game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId)
+    end,
+})
+
+MainTab:CreateSection("Advertisement")
+
+local AdButton = MainTab:CreateButton({
+    Name = "Post Trade Advertisement",
+    Callback = function()
+        local messages = {
+            "Trading what's in my profile :scroll:",
+            ":feet: 8x MEGA LEGENDARY",
+            ":magic_wand: 18x Aztec Egg Pets = Ride Potion Or good Legendarys",
+            ":rocket: Looking for HIGH TIERS — can OVERPAY!",
+            "NOT OFFERING, COME WITH AN OFFER, AND WE CAN NEGOTIATE"
+        }
+        
+        local textChatService = game:GetService("TextChatService")
+        local textChannel = textChatService.TextChannels.RBXGeneral
+        
+        for _, message in ipairs(messages) do
+            textChannel:SendAsync(message)
+            wait(0.5)
+        end
+    end,
+}) 
