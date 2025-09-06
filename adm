@@ -1,4 +1,4 @@
-script_key="WnGyeJJklnQEMaAJQKqMItKrhoZbdbxU";
+script_key="fJUAZRCdMJJdkwhmtSTSOqzdkglUAlwX";
 getgenv().Config = {
     ["PetAMountToBuy"] = "999", 
     ["PetRemoteToBuy"] = "aztec_egg_2025_aztec_egg",
