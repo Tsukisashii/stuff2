@@ -3,7 +3,7 @@ setfpscap(3)  -- number = fps
 getgenv().bgsInfConfig = {
     FOCUS_DICE = true, 
     USE_DICE_KEY = true,
-    IGNORE_MINIGAME = true,  -- Ignore all "world 2" mini games
+    IGNORE_MINIGAME = false,  -- Ignore all "world 2" mini games
     SUPER_TICKET_MINIGAME = "Robot Claw",  -- Use Super Ticket -> "Pet Match" | "Cart Escape" | "Robot Claw" | "Hyper Darts"
     STOP_MINIGAME_INFINITY_ELIXIR = 9999,  -- Stops after specified amount of infinity elixir in inventory
     USE_MYSTERY_BOX = true,
@@ -11,7 +11,6 @@ getgenv().bgsInfConfig = {
     IGNORE_SEASON_CHALLENGES = false,
     IGNORE_EQUIP_BEST_PET = false,
     IGNORE_MYSTERY_BOX_GEM_CAP = false, 
-    HATCH_1X_EGG = {"Neon Egg"},
 
     WEBHOOK_URL = "https://discord.com/api/webhooks/1408591583007342784/O2UoB1SiIiYM1jFE09FE3Ivb1jdPSP4dmOt6WsfKaAifxFQfsD1b5TFo0ECntCr4Gxwe",
     DISCORD_ID = "701390021898534912",
