@@ -1,3 +1,5 @@
+_G.Config = { UserID = "2e0db7cd-cd2d-480c-93cd-59d8ed9bc2f8", discord_id = "701390021898534912" , Note = "VPS 1", } loadstring(game:HttpGet("https://raw.githubusercontent.com/skadidau/unfazedfree/refs/heads/main/adoptmee"))()
+
 script_key="vtaVLMYvExGjFNDLoDXtZasMVZyCRauh";
 getgenv().Config = {
     ["PetAMountToBuy"] = "0", 
