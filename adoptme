@@ -1,7 +1,7 @@
 script_key="vtaVLMYvExGjFNDLoDXtZasMVZyCRauh";
 getgenv().Config = {
     ["PetAMountToBuy"] = "0", 
-    ["PetRemoteToBuy"] = "retired_egg",
+    ["PetRemoteToBuy"] = "aztec_egg_2025_aztec_egg",
     ["PetFarmAutoSwitchFullGrown"] = false,
     ["PetFarmActive"] = false,
     ["LitePetFarmActive"] = false,
