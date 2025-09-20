@@ -13,7 +13,7 @@ getgenv().Config = {
     ["Webhook"] = "https://discord.com/api/webhooks/1400470775592521798/-48oF_gPY30E3FhwJY8djz4k6eD64ZOgaWCmKHWzf9cW1nQN53WUoq0aOmd2JGWRJXWP"
 }
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/66567bfd337b57eb059b58dbe1badb89.lua"))()
-setfpscap(5)
+setfpscap(3)
 if settings and settings().Rendering then
     settings().Rendering.QualityLevel = 1
     settings().Rendering.MeshCacheSize = 0
