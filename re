@@ -20,23 +20,54 @@ local function getClaimRemote()
     end
 end
 
--- ♻️ Send recycler request
-local function sendRecycler(remote, uniques)
+-- ♻️ Send recycler request (uses pet IDs mapped from names)
+local function sendRecycler(remote, petNames)
+    local inventory = {} -- if you have inventory table, map names to IDs here
+    local uniques = {} -- fallback empty to recycle points if none found
+
+    -- Example: map names to IDs (only if inventory exists)
+    for id, pet in pairs(inventory) do
+        for _, name in ipairs(petNames) do
+            if pet.name == name then
+                uniques[id] = true
+            end
+        end
+    end
+
     local args = {
         "f-27",
         "UseBlock",
         {
             action = "use",
-            uniques = uniques or {}
+            uniques = uniques
         },
         LocalPlayer.Character
     }
+
     return remote:InvokeServer(unpack(args))
 end
 
--- ✅ Send claim request
-local function claim(remote)
-    local args = {
+-- ✅ Claim rewards
+local function claim(remote, petNames)
+    return remote:InvokeServer(unpack(petNames))
+end
+
+-- 🔄 Auto recycler + auto claim loop
+task.spawn(function()
+    local recyclerRemote = getRecyclerRemote()
+    if not recyclerRemote then
+        warn("⚠️ Recycler remote not found")
+        return
+    end
+
+    local claimRemote = getClaimRemote()
+    if not claimRemote then
+        warn("⚠️ Claim remote not found")
+        return
+    end
+
+    -- 💡 Pet names you already had
+    local petsToRecycle = {
         "red_panda",
         "beaver",
         "buffalo",
@@ -62,31 +93,14 @@ local function claim(remote)
         "aztec_egg_2025_xiucohtl",
         "aztec_egg_2025_golden_lynx"
     }
-    return remote:InvokeServer(unpack(args))
-end
-
--- 🔄 Auto recycler + auto claim loop
-task.spawn(function()
-    local recyclerRemote = getRecyclerRemote()
-    if not recyclerRemote then
-        warn("⚠️ Recycler remote not found")
-        return
-    end
-
-    local claimRemote = getClaimRemote()
-    if not claimRemote then
-        warn("⚠️ Claim remote not found")
-        return
-    end
 
     while true do
         -- Recycle pets or points
-        local uniques = {} -- empty table → recycle points if no pets
-        sendRecycler(recyclerRemote, uniques)
+        sendRecycler(recyclerRemote, petsToRecycle)
         print("♻️ Recycled pets/points")
 
         -- Claim rewards
-        claim(claimRemote)
+        claim(claimRemote, petsToRecycle)
         print("🎁 Claimed rewards")
 
         task.wait(2) -- prevent double-fire
