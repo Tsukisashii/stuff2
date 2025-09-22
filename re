@@ -1,90 +1,94 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
-local Workspace = game:GetService("Workspace")
 
-local API = ReplicatedStorage:WaitForChild("API")
-local LegacyLoad = require(ReplicatedStorage:WaitForChild("LegacyLoad"))
+-- 🕒 WaitForChild with timeout
+local function safeWait(parent, childName, timeout)
+    local obj = parent:WaitForChild(childName, timeout)
+    if not obj then
+        warn("⚠️ "..childName.." not found after "..timeout.." seconds")
+    end
+    return obj
+end
+
+local API = safeWait(ReplicatedStorage, "API", 5)
+if not API then return end
+
+local LegacyLoadModule = safeWait(ReplicatedStorage, "LegacyLoad", 5)
+if not LegacyLoadModule then return end
+local LegacyLoad = require(LegacyLoadModule)
 local ClientData = LegacyLoad("ClientData")
 
--- 🔎 detect random recycler remote
+-- 🔎 Detect recycler remote (random name each join)
 local function getRecyclerRemote()
-	for _, obj in ipairs(API:GetChildren()) do
-		if obj:IsA("RemoteFunction") then
-			local success, _ = pcall(function()
-				obj:InvokeServer("f-27","UseBlock",{action="test"}, LocalPlayer.Character)
-			end)
-			if success then
-				return obj
-			end
-		end
-	end
+    for _, obj in ipairs(API:GetChildren()) do
+        if obj:IsA("RemoteFunction") then
+            return obj
+        end
+    end
+    warn("⚠️ Recycler remote not found")
 end
 
--- ♻️ send recycler
+-- ♻️ Send recycler request
 local function sendRecycler(remote, uniques)
-	local args = {
-		"f-27",
-		"UseBlock",
-		{
-			action = "use",
-			uniques = uniques or {}
-		},
-		LocalPlayer.Character
-	}
-	pcall(function()
-		remote:InvokeServer(unpack(args))
-	end)
+    local args = {
+        "f-27",
+        "UseBlock",
+        {
+            action = "use",
+            uniques = uniques or {}
+        },
+        LocalPlayer.Character
+    }
+    return remote:InvokeServer(unpack(args))
 end
 
--- 🐾 pick pets to recycle
+-- 🐾 Pick pets to recycle (Common → Ultra)
 local function getPetsToRecycle()
-	local inventory = ClientData.get("inventory")
-	local pets = inventory and inventory.pets or {}
-	local list = {}
-	for unique, pet in pairs(pets) do
-		local rarity = pet.rarity
-		if rarity == "Common" or rarity == "Uncommon" or rarity == "Rare" or rarity == "Ultra" then
-			table.insert(list, unique)
-		end
-	end
-	return list
+    local inventory = ClientData.get("inventory")
+    local pets = inventory and inventory.pets or {}
+    local list = {}
+    for unique, pet in pairs(pets) do
+        local rarity = pet.rarity
+        if rarity == "Common" or rarity == "Uncommon" or rarity == "Rare" or rarity == "Ultra" then
+            table.insert(list, unique)
+        end
+    end
+    return list
 end
 
--- ⏱ wait for the recycler to be READY
-local function waitForReadyLabel()
-	local timerLabel = Workspace:WaitForChild("HouseInteriors")
-		:FindFirstChild("furniture", true)
-		:FindFirstChildWhichIsA("SurfaceGui", true)
-	local label = timerLabel and timerLabel:FindFirstChildWhichIsA("TextLabel", true)
-	if not label then
-		warn("⚠️ Couldn’t find timer label")
-		return nil
-	end
-	return label
-end
-
--- 🔄 main loop
+-- 🔄 Main auto-recycler loop
 task.spawn(function()
-	local recyclerRemote = getRecyclerRemote()
-	if not recyclerRemote then
-		warn("⚠️ Recycler remote not found")
-		return
-	end
+    local recyclerRemote = getRecyclerRemote()
+    if not recyclerRemote then return end
 
-	local label = waitForReadyLabel()
-	if not label then return end
+    -- Find the recycler timer label
+    local timerGui = workspace:WaitForChild("HouseInteriors", 5)
+        :FindFirstChild("furniture", true)
+        :FindFirstChildWhichIsA("SurfaceGui", true)
+    local timerLabel = timerGui and timerGui:FindFirstChildWhichIsA("TextLabel", true)
 
-	while true do
-		-- wait until "READY"
-		repeat task.wait(1) until label.Text == "READY"
+    if not timerLabel then
+        warn("⚠️ Couldn’t find recycler timer label")
+        return
+    end
 
-		-- collect pets
-		local petsToRecycle = getPetsToRecycle()
-		sendRecycler(recyclerRemote, petsToRecycle)
-		print("♻️ Recycled", #petsToRecycle, "pets (plus points if any)")
+    while true do
+        -- Wait until "READY"
+        repeat task.wait(1) until timerLabel.Text == "READY"
 
-		-- small buffer to avoid double-fire
-		task.wait(1)
-	end
+        -- Collect pets to recycle
+        local petsToRecycle = getPetsToRecycle()
+
+        if #petsToRecycle > 0 then
+            print("♻️ Recycling pets:", #petsToRecycle)
+            sendRecycler(recyclerRemote, petsToRecycle)
+        else
+            print("♻️ No pets, recycling points only")
+            sendRecycler(recyclerRemote, {}) -- still sends points
+        end
+
+        -- Small delay to prevent double-fire
+        task.wait(2)
+    end
 end)
