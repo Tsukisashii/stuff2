@@ -3,76 +3,77 @@ local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 
 local API = ReplicatedStorage:WaitForChild("API")
+local LegacyLoad = require(ReplicatedStorage:WaitForChild("LegacyLoad"))
+local ClientData = LegacyLoad("ClientData")
 
--- 🔎 auto-detect recycler RemoteFunction
+-- 🔎 find recycler remote
 local function getRecyclerRemote()
     for _, obj in ipairs(API:GetChildren()) do
         if obj:IsA("RemoteFunction") then
             return obj
         end
     end
-    return nil
 end
 
--- 🐾 helper: send recycle request
-local function recyclePets(remote, petUniques)
+-- ♻️ send recycler
+local function sendRecycler(remote, uniques)
     local args = {
         "f-27",
         "UseBlock",
         {
             action = "use",
-            uniques = petUniques or {}
+            uniques = uniques or {}
         },
         LocalPlayer.Character
     }
-    local result = remote:InvokeServer(unpack(args))
-    return result
+    return remote:InvokeServer(unpack(args))
 end
 
--- ♻️ loop forever
+-- 🐾 pick pets to recycle
+local function getPetsToRecycle()
+    local inventory = ClientData.get("inventory")
+    local pets = inventory and inventory.pets or {}
+    local list = {}
+    for unique, pet in pairs(pets) do
+        local rarity = pet.rarity
+        if rarity == "Common" or rarity == "Uncommon" or rarity == "Rare" or rarity == "Ultra" then
+            table.insert(list, unique)
+        end
+    end
+    return list
+end
+
+-- 🔄 main loop
 task.spawn(function()
-    while task.wait(1) do
-        local recyclerRemote = getRecyclerRemote()
-        if not recyclerRemote then
-            warn("⚠️ Recycler remote not found, retrying...")
-            continue
-        end
+    local recyclerRemote = getRecyclerRemote()
+    if not recyclerRemote then
+        warn("⚠️ Recycler remote not found")
+        return
+    end
 
-        -- 🧾 fetch inventory
-        local clientData = ReplicatedStorage:FindFirstChild("ClientData")
-        if not clientData then
-            warn("⚠️ ClientData missing")
-            continue
-        end
+    -- find timer label
+    local timerLabel = workspace:WaitForChild("HouseInteriors")
+        :FindFirstChild("furniture", true)
+        :FindFirstChildWhichIsA("SurfaceGui", true)
+    local label = timerLabel and timerLabel:FindFirstChildWhichIsA("TextLabel", true)
 
-        local inventory = require(clientData).get("inventory")
-        local pets = inventory and inventory.pets or {}
+    if not label then
+        warn("⚠️ Couldn’t find timer label")
+        return
+    end
 
-        -- 🎯 pick commons → ultras
-        local petsToRecycle = {}
-        for unique, pet in pairs(pets) do
-            if pet.rarity == "Common" or pet.rarity == "Uncommon" or pet.rarity == "Rare" or pet.rarity == "Ultra" then
-                table.insert(petsToRecycle, unique)
-            end
-        end
+    while true do
+        -- wait until "READY"
+        repeat task.wait(1) until label.Text == "READY"
 
-        if #petsToRecycle == 0 then
-            print("✅ No pets to recycle, claiming leftover rewards...")
-            recyclePets(recyclerRemote, {}) -- claim leftover points
-            task.wait(5) -- wait before checking again
-        else
-            print("♻️ Recycling", #petsToRecycle, "pets...")
-            local BATCH_SIZE = 20
-            local index = 1
-            while index <= #petsToRecycle do
-                local batch = {}
-                for i = index, math.min(index + BATCH_SIZE - 1, #petsToRecycle) do
-                    table.insert(batch, petsToRecycle[i])
-                end
-                recyclePets(recyclerRemote, batch)
-                index += BATCH_SIZE
-                task.wait(2) -- cooldown safety
-            end
-        end
+        -- collect pets
+        local petsToRecycle = getPetsToRecycle()
+        print("♻️ Recycling...", #petsToRecycle, "pets (plus points if any)")
+
+        -- recycle pets or points
+        sendRecycler(recyclerRemote, petsToRecycle)
+
+        -- wait a bit so we don’t double-fire
+        task.wait(2)
     end
 end)
