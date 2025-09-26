@@ -11,7 +11,7 @@
             EggType = "any", -- Which egg type to farm (any or specific egg ID)
             BuyEggType = "aztec_egg_2025_aztec_egg", -- Which egg type to buy
             MaxPets = 1, -- Maximum pets to equip (1-2)
-            FarmUntilFullGrown = false, -- Prioritize pets that aren't full grown
+            FarmUntilFullGrown = true, -- Prioritize pets that aren't full grown
             PrioritizeFriendship = false, -- Prioritize pets with higher friendship
             SelectiveFarm = false, -- Only farm specific pet types
             SelectedPetTypes = {}, -- Pet types to farm when SelectiveFarm is enabled
