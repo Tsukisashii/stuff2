@@ -5,11 +5,11 @@
         },
         BabyFarm = false, -- Enable/disable baby farming
         PetFarm = {
-            Enabled = false, -- Enable/disable pet farming
+            Enabled = true, -- Enable/disable pet farming
             FarmEggs = true, -- Farm eggs instead of regular pets
             BuyEggs = true, -- Automatically buy eggs when needed
-            EggType = "retired_egg", -- Which egg type to farm (any or specific egg ID)
-            BuyEggType = "any", -- Which egg type to buy
+            EggType = "retired_egg", "aztec_egg_2025_aztec_egg", -- Which egg type to farm (any or specific egg ID)
+            BuyEggType = any, -- Which egg type to buy
             MaxPets = 1, -- Maximum pets to equip (1-2)
             FarmUntilFullGrown = false, -- Prioritize pets that aren't full grown
             PrioritizeFriendship = false, -- Prioritize pets with higher friendship
@@ -61,8 +61,8 @@
             KeepFullGrown = false -- Keep full grown pets
         },
         IdleProgression = {
-            Enabled = false,
-            SelectedPets = {}  -- List of pet IDs to prioritize
+            Enabled = true,
+            SelectedPets = {"aztec_egg_2025_winged_snake", "aztec_egg_2025_temple_friend"}  -- List of pet IDs to prioritize
         },
         Webhook = {
             Enabled = true, -- Send webhook notifications
