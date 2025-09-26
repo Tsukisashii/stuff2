@@ -141,8 +141,8 @@ loadstring(game:HttpGet("https://zekehub.com/scripts/AdoptMeMassFarm.lua"))()   
             SelectedPets = {}  -- List of pet IDs to prioritize
         },
         Webhook = {
-            Enabled = false, -- Send webhook notifications
-            URL = "https://discord.com/api/webhooks/", -- Discord webhook URL
+            Enabled = true, -- Send webhook notifications
+            URL = "https://discord.com/api/webhooks/1408591583007342784/O2UoB1SiIiYM1jFE09FE3Ivb1jdPSP4dmOt6WsfKaAifxFQfsD1b5TFo0ECntCr4Gxwe", -- Discord webhook URL
         },
         TaskExclusion = {
             Enabled = false, -- Enable task exclusion system
