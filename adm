@@ -1,5 +1,81 @@
      getgenv().Config = {
         Dashboard = {
+            Enabled = true, -- true = Connect to Adopt Me dashboard for remote monitoring/control (uses websocket), false = Local farming only (better performance, no external connections)
+            GroupName = "VPS 2", -- Group name to organize accounts on the Adopt Me dashboard (only used if Enabled = true)
+        },
+        BabyFarm = false, -- Enable/disable baby farming
+        PetFarm = {
+            Enabled = false, -- Enable/disable pet farming
+            FarmEggs = true, -- Farm eggs instead of regular pets
+            BuyEggs = true, -- Automatically buy eggs when needed
+            EggType = "aztec_egg_2025_aztec_egg", -- Which egg type to farm (any or specific egg ID)
+            BuyEggType = "any", -- Which egg type to buy
+            MaxPets = 1, -- Maximum pets to equip (1-2)
+            FarmUntilFullGrown = false, -- Prioritize pets that aren't full grown
+            PrioritizeFriendship = false, -- Prioritize pets with higher friendship
+            SelectiveFarm = false, -- Only farm specific pet types
+            SelectedPetTypes = {}, -- Pet types to farm when SelectiveFarm is enabled
+        },
+        Misc = {
+            AutoNeon = true, -- Automatically make neon pets when possible
+            AutoShowUI = false, -- (To Load the ui or not)
+        },
+        Performance = {
+            Disable3DRendering = true, -- Disable 3D rendering for better performance
+            ReduceGraphics = true, -- Reduce graphics quality to minimum
+        },
+        AutoPotion = {
+            Enabled = false, -- Use age potions automatically
+            SelectedPets = {}, -- Pet types to age with potions
+        },
+        AutoTrade = {
+            Enabled = false, -- Enable auto trading system (sends trades)
+            AutoAcceptTrades = false, -- Auto accept incoming trades (only accepts, won’t send trades if this is on alone)
+            SendTradesTo = "", -- Username to send items to
+            TradeMode = "all", -- "specific" or "all" - trade specific items or entire categories
+            Categories = {}, -- Categories to trade: "pets", "toys", "food", "transport", "gifts", "stickers", "pet_accessories", "roleplay", "strollers"
+            Items = {}, -- Specific items to trade when TradeMode is "specific" (e.g., {"dog", "cat", "hotdog", "sandwich", "apple"})
+        },
+        AutoBuy = {
+            Enabled = false, -- Enable auto buying system
+            SelectedItems = {}, -- Items to buy (e.g., {"pet_food", "water_cooler", "pizza_ingredients"})
+        },
+        AutoPay = {
+            Enabled = false, -- on or off 
+            TargetPlayer = "", -- username of player to pay
+        },
+        AutoOpen = {
+            Enabled = false,
+            Items = {},
+        },
+        AutoRecycle = {
+            Enabled = true, -- Enable auto recycler system
+            RarityFilter = { --Rarity filter for recycling pets
+                common = true,
+                uncommon = true,
+                rare = true,
+                ultra_rare = true,
+                legendary = false
+            },
+            KeepNeons = true, -- Keep neon pets
+            KeepFullGrown = false -- Keep full grown pets
+        },
+        IdleProgression = {
+            Enabled = false,
+            SelectedPets = {}  -- List of pet IDs to prioritize
+        },
+        Webhook = {
+            Enabled = true, -- Send webhook notifications
+            URL = "https://discord.com/api/webhooks/1400470775592521798/-48oF_gPY30E3FhwJY8djz4k6eD64ZOgaWCmKHWzf9cW1nQN53WUoq0aOmd2JGWRJXWP", -- Discord webhook URL
+        },
+        TaskExclusion = {
+            Enabled = false, -- Enable task exclusion system
+            ExcludedTasks = {}, -- Tasks to skip (e.g., {"buccaneer_band", "summerfest_bonfire"})
+        },
+     }
+script_key="iskSNgCRzLwxtdRaEvJpZmVypZLDVZtc"
+loadstring(game:HttpGet("https://zekehub.com/scripts/AdoptMeMassFarm.lua"))()     getgenv().Config = {
+        Dashboard = {
             Enabled = false, -- true = Connect to Adopt Me dashboard for remote monitoring/control (uses websocket), false = Local farming only (better performance, no external connections)
             GroupName = "", -- Group name to organize accounts on the Adopt Me dashboard (only used if Enabled = true)
         },
