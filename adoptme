@@ -5,7 +5,7 @@
         },
         BabyFarm = false, -- Enable/disable baby farming
         PetFarm = {
-            Enabled = false, -- Enable/disable pet farming
+            Enabled = true, -- Enable/disable pet farming
             FarmEggs = true, -- Farm eggs instead of regular pets
             BuyEggs = false, -- Automatically buy eggs when needed
             EggType = "pet_recycler_2025_crystal_egg", -- Which egg type to farm (any or specific egg ID)
