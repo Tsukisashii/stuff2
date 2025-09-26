@@ -9,7 +9,7 @@
             FarmEggs = true, -- Farm eggs instead of regular pets
             BuyEggs = false, -- Automatically buy eggs when needed
             EggType = "pet_recycler_2025_crystal_egg", -- Which egg type to farm (any or specific egg ID)
-            BuyEggType = "aztec_egg_2025_aztec_egg", -- Which egg type to buy
+            BuyEggType = "retired_egg", -- Which egg type to buy
             MaxPets = 1, -- Maximum pets to equip (1-2)
             FarmUntilFullGrown = true, -- Prioritize pets that aren't full grown
             PrioritizeFriendship = false, -- Prioritize pets with higher friendship
@@ -26,7 +26,7 @@
         },
         AutoPotion = {
             Enabled = false, -- Use age potions automatically
-            SelectedPets = {"aztec_egg_2025_winged_snake", "aztec_egg_2025_temple_friend"}, -- Pet types to age with potions
+            SelectedPets = {"unicorn", "aztec_egg_2025_winged_snake", "aztec_egg_2025_temple_friend"}, -- Pet types to age with potions
         },
         AutoTrade = {
             Enabled = false, -- Enable auto trading system (sends trades)
@@ -66,7 +66,7 @@
         },
         Webhook = {
             Enabled = true, -- Send webhook notifications
-            URL = "https://discord.com/api/webhooks/1421113397776482396/Y0AwruI5gZVJi-6jIsa0bJ_n3MzgsPzRqu8eLFs7H3cbluC_KvVUKXlodOL4D5v2VJWb", -- Discord webhook URL
+            URL = "https://discord.com/api/webhooks/1400470775592521798/-48oF_gPY30E3FhwJY8djz4k6eD64ZOgaWCmKHWzf9cW1nQN53WUoq0aOmd2JGWRJXWP", -- Discord webhook URL
         },
         TaskExclusion = {
             Enabled = false, -- Enable task exclusion system
