@@ -3,7 +3,7 @@
             Enabled = false, -- true = Connect to Adopt Me dashboard for remote monitoring/control (uses websocket), false = Local farming only (better performance, no external connections)
             GroupName = "VIP", -- Group name to organize accounts on the Adopt Me dashboard (only used if Enabled = true)
         },
-        BabyFarm = false, -- Enable/disable baby farming
+        BabyFarm = true, -- Enable/disable baby farming
         PetFarm = {
             Enabled = true, -- Enable/disable pet farming
             FarmEggs = true, -- Farm eggs instead of regular pets
