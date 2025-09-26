@@ -61,12 +61,12 @@
             KeepFullGrown = false -- Keep full grown pets
         },
         IdleProgression = {
-            Enabled = true,
+            Enabled = false,
             SelectedPets = {"aztec_egg_2025_winged_snake", "aztec_egg_2025_temple_friend"}  -- List of pet IDs to prioritize
         },
         Webhook = {
             Enabled = true, -- Send webhook notifications
-            URL = "https://discord.com/api/webhooks/1400470775592521798/-48oF_gPY30E3FhwJY8djz4k6eD64ZOgaWCmKHWzf9cW1nQN53WUoq0aOmd2JGWRJXWP", -- Discord webhook URL
+            URL = "", -- Discord webhook URL
         },
         TaskExclusion = {
             Enabled = false, -- Enable task exclusion system
