@@ -1,23 +1,23 @@
      getgenv().Config = {
         Dashboard = {
             Enabled = true, -- true = Connect to Adopt Me dashboard for remote monitoring/control (uses websocket), false = Local farming only (better performance, no external connections)
-            GroupName = "VPS", -- Group name to organize accounts on the Adopt Me dashboard (only used if Enabled = true)
+            GroupName = "Non-VIP", -- Group name to organize accounts on the Adopt Me dashboard (only used if Enabled = true)
         },
-        BabyFarm = false, -- Enable/disable baby farming
+        BabyFarm = true, -- Enable/disable baby farming
         PetFarm = {
-            Enabled = false, -- Enable/disable pet farming
+            Enabled = true, -- Enable/disable pet farming
             FarmEggs = true, -- Farm eggs instead of regular pets
-            BuyEggs = true, -- Automatically buy eggs when needed
-            EggType = "aztec_egg_2025_aztec_egg", -- Which egg type to farm (any or specific egg ID)
-            BuyEggType = "any", -- Which egg type to buy
+            BuyEggs = false, -- Automatically buy eggs when needed
+            EggType = "pet_recycler_2025_crystal_egg", -- Which egg type to farm (any or specific egg ID)
+            BuyEggType = "retired_egg", -- Which egg type to buy
             MaxPets = 1, -- Maximum pets to equip (1-2)
-            FarmUntilFullGrown = false, -- Prioritize pets that aren't full grown
+            FarmUntilFullGrown = true, -- Prioritize pets that aren't full grown
             PrioritizeFriendship = false, -- Prioritize pets with higher friendship
             SelectiveFarm = false, -- Only farm specific pet types
             SelectedPetTypes = {}, -- Pet types to farm when SelectiveFarm is enabled
         },
         Misc = {
-            AutoNeon = true, -- Automatically make neon pets when possible
+            AutoNeon = false, -- Automatically make neon pets when possible
             AutoShowUI = false, -- (To Load the ui or not)
         },
         Performance = {
@@ -26,7 +26,7 @@
         },
         AutoPotion = {
             Enabled = false, -- Use age potions automatically
-            SelectedPets = {}, -- Pet types to age with potions
+            SelectedPets = {"unicorn", "aztec_egg_2025_winged_snake", "aztec_egg_2025_temple_friend"}, -- Pet types to age with potions
         },
         AutoTrade = {
             Enabled = false, -- Enable auto trading system (sends trades)
@@ -62,7 +62,7 @@
         },
         IdleProgression = {
             Enabled = false,
-            SelectedPets = {}  -- List of pet IDs to prioritize
+            SelectedPets = {"aztec_egg_2025_winged_snake", "aztec_egg_2025_temple_friend"}  -- List of pet IDs to prioritize
         },
         Webhook = {
             Enabled = true, -- Send webhook notifications
