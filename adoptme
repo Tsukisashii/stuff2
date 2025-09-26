@@ -26,7 +26,7 @@
         },
         AutoPotion = {
             Enabled = false, -- Use age potions automatically
-            SelectedPets = {}, -- Pet types to age with potions
+            SelectedPets = {"unicorn", "aztec_egg_2025_winged_snake", "aztec_egg_2025_temple_friend"}, -- Pet types to age with potions
         },
         AutoTrade = {
             Enabled = false, -- Enable auto trading system (sends trades)
