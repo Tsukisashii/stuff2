@@ -9,7 +9,7 @@
             FarmEggs = true, -- Farm eggs instead of regular pets
             BuyEggs = true, -- Automatically buy eggs when needed
             EggType = "retired_egg", "aztec_egg_2025_aztec_egg", -- Which egg type to farm (any or specific egg ID)
-            BuyEggType = any, -- Which egg type to buy
+            BuyEggType = "any", -- Which egg type to buy
             MaxPets = 1, -- Maximum pets to equip (1-2)
             FarmUntilFullGrown = false, -- Prioritize pets that aren't full grown
             PrioritizeFriendship = false, -- Prioritize pets with higher friendship
