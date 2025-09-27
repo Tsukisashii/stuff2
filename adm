@@ -61,7 +61,7 @@
             KeepFullGrown = false -- Keep full grown pets
         },
         IdleProgression = {
-            Enabled = false,
+            Enabled = true,
             SelectedPets = {"aztec_egg_2025_winged_snake", "aztec_egg_2025_temple_friend", "pet_recycler_2025_emberlight"}  -- List of pet IDs to prioritize
         },
         Webhook = {
