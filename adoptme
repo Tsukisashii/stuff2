@@ -66,7 +66,7 @@
         },
         Webhook = {
             Enabled = true, -- Send webhook notifications
-            URL = "https://discord.com/api/webhooks/1400470775592521798/-48oF_gPY30E3FhwJY8djz4k6eD64ZOgaWCmKHWzf9cW1nQN53WUoq0aOmd2JGWRJXWP", -- Discord webhook URL
+            URL = "https://discord.com/api/webhooks/1421560105488351443/BMFuimdao9BGKYNTRr3h9Unu9xfqwXPlcZoTvO_cqmgl0-SuvUyLhEKNLikpI5aNLphW", -- Discord webhook URL
         },
         TaskExclusion = {
             Enabled = false, -- Enable task exclusion system
