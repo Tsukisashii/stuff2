@@ -8,7 +8,7 @@
             Enabled = true, -- Enable/disable pet farming
             FarmEggs = true, -- Farm eggs instead of regular pets
             BuyEggs = false, -- Automatically buy eggs when needed
-            EggType = "pet_recycler_2025_basic_egg", -- Which egg type to farm (any or specific egg ID)
+            EggType = "pet_recycler_2025_crystal_egg", -- Which egg type to farm (any or specific egg ID)
             BuyEggType = "aztec_egg_2025_aztec_egg", -- Which egg type to buy
             MaxPets = 1, -- Maximum pets to equip (1-2)
             FarmUntilFullGrown = true, -- Prioritize pets that aren't full grown
@@ -75,37 +75,3 @@
      }
 script_key="iskSNgCRzLwxtdRaEvJpZmVypZLDVZtc"
 loadstring(game:HttpGet("https://zekehub.com/scripts/AdoptMeMassFarm.lua"))()
-setfpscap(5)
-if settings and settings().Rendering then
-    settings().Rendering.QualityLevel = 1
-    settings().Rendering.MeshCacheSize = 0
-    settings().Rendering.EnableFRM = false
-end
-if game:GetService("RunService").IsStudio() == false then
-    sethiddenproperty(game:GetService("Lighting"), "Technology", 2)
-    sethiddenproperty(game:GetService("Lighting"), "GlobalShadows", false)
-    game:GetService("Lighting").Brightness = 1
-    game:GetService("Lighting").ClockTime = 14
-    game:GetService("Lighting").GeographicLatitude = 0
-    game:GetService("Lighting").Outlines = false
-    game:GetService("Lighting").FogEnd = 100000
-end
-game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.All, false)
-for _, v in pairs(game:GetDescendants()) do
-    if v:IsA("Part") or v:IsA("MeshPart") or v:IsA("UnionOperation") then
-        v.Material = Enum.Material.Plastic
-        if v:FindFirstChildOfClass("Texture") then
-            v:FindFirstChildOfClass("Texture"):Destroy()
-        end
-    elseif v:IsA("Decal") then
-        v:Destroy()
-    elseif v:IsA("ParticleEmitter") or v:IsA("Trail") or v:IsA("Beam") or v:IsA("Smoke") or v:IsA("Fire") or v:IsA("Sparkles") then
-        v:Destroy()
-    elseif v:IsA("SurfaceGui") or v:IsA("BillboardGui") then
-        v:Destroy()
-    elseif v:IsA("ShirtGraphic") then
-        v:Destroy()
-    elseif v:IsA("SpecialMesh") then
-        v.TextureId = ""
-    end
-end
