@@ -7,7 +7,7 @@
         PetFarm = {
             Enabled = true, -- Enable/disable pet farming
             FarmEggs = true, -- Farm eggs instead of regular pets
-            BuyEggs = true, -- Automatically buy eggs when needed
+            BuyEggs = false, -- Automatically buy eggs when needed
             EggType = "aztec_egg_2025_aztec_egg", -- Which egg type to farm (any or specific egg ID)
             BuyEggType = "pet_recycler_2025_crystal_egg", -- Which egg type to buy
             MaxPets = 1, -- Maximum pets to equip (1-2)
