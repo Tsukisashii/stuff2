@@ -1,4 +1,4 @@
-setpfpscap(1)
+setpfpscap(5)
 
 getgenv().Config = {
         Dashboard = {
