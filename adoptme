@@ -20,7 +20,7 @@ getgenv().Config = {
         },
         Misc = {
             AutoNeon = true, -- Automatically make neon pets when possible
-            AutoShowUI = false, -- (To Load the ui or not)
+            AutoShowUI = true, -- (To Load the ui or not)
         },
         Performance = {
             Disable3DRendering = true, -- Disable 3D rendering for better performance
