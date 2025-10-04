@@ -22,7 +22,7 @@
             SelectedPetTypes = {}, -- Pet types to farm when SelectiveFarm is enabled
         },
         Misc = {
-            AutoNeon = true, -- Automatically make neon pets when possible
+            AutoNeon = false, -- Automatically make neon pets when possible
             AutoShowUI = false, -- (To Load the ui or not)
         },
         Performance = {
@@ -54,7 +54,7 @@
             Items = {},
         },
         AutoRecycle = {
-            Enabled = true, -- Enable auto recycler system
+            Enabled = false, -- Enable auto recycler system
             RarityFilter = { --Rarity filter for recycling pets
                 common = true,
                 uncommon = true,
