@@ -1,11 +1,11 @@
 getgenv().Config = {
         Dashboard = {
-            Enabled = true, -- true = Connect to Adopt Me dashboard for remote monitoring/control (uses websocket), false = Local farming only (better performance, no external connections)
+            Enabled = false, -- true = Connect to Adopt Me dashboard for remote monitoring/control (uses websocket), false = Local farming only (better performance, no external connections)
             GroupName = "VIP", -- Group name to organize accounts on the Adopt Me dashboard (only used if Enabled = true)
         },
-        BabyFarm = true, -- Enable/disable baby farming
+        BabyFarm = false, -- Enable/disable baby farming
         PetFarm = {
-            Enabled = true, -- Enable/disable pet farming
+            Enabled = false, -- Enable/disable pet farming
             FarmEggs = false, -- Farm eggs instead of regular pets
             BuyEggs = false, -- Automatically buy eggs when needed
             EggType = "any", -- Which egg type to farm (any or specific egg ID)
