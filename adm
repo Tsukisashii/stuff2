@@ -1,6 +1,6 @@
-    getgenv().Config = {
+getgenv().Config = {
         Dashboard = {
-            Enabled = true, -- true = Connect to Adopt Me dashboard for remote monitoring/control (uses websocket), false = Local farming only (better performance, no external connections)
+            Enabled = false, -- true = Connect to Adopt Me dashboard for remote monitoring/control (uses websocket), false = Local farming only (better performance, no external connections)
             GroupName = "VPS-1", -- Group name to organize accounts on the Adopt Me dashboard (only used if Enabled = true)
         },
         EventFarm = {
@@ -14,7 +14,7 @@
             FarmEggs = false, -- Farm eggs instead of regular pets
             BuyEggs = false, -- Automatically buy eggs when needed
             EggType = "any", -- Which egg type to farm (any or specific egg ID)
-            BuyEggType = "aztec_egg_2025_aztec_egg", -- Which egg type to buy
+            BuyEggType = "any", -- Which egg type to buy
             MaxPets = 1, -- Maximum pets to equip (1-2)
             FarmUntilFullGrown = false, -- Prioritize pets that aren't full grown
             PrioritizeFriendship = false, -- Prioritize pets with higher friendship
@@ -31,15 +31,15 @@
         },
         AutoPotion = {
             Enabled = false, -- Use age potions automatically
-            SelectedPets = {"unicorn", "aztec_egg_2025_winged_snake", "aztec_egg_2025_temple_friend", "diamond_unicorn", "golden_griffin", "basic_egg_2022_alicorn", "beach_2024_diamond_mahi_mahi", "pet_recycler_2025_emberlight", "pet_recycler_2025_giant_panda", "golden_unicorn", "dragon"}, -- Pet types to age with potions
+            SelectedPets = {}, -- Pet types to age with potions
         },
         AutoTrade = {
             Enabled = false, -- Enable auto trading system (sends trades)
             AutoAcceptTrades = false, -- Auto accept incoming trades (only accepts, won’t send trades if this is on alone)
-            SendTradesTo = "Tsukisashi", -- Username to send items to
-            TradeMode = "specific", -- "specific" or "all" - trade specific items or entire categories
-            Categories = {"pets"}, -- Categories to trade: "pets", "toys", "food", "transport", "gifts", "stickers", "pet_accessories", "roleplay", "strollers"
-            Items = {"unicorn", "aztec_egg_2025_winged_snake", "aztec_egg_2025_temple_friend", "diamond_unicorn", "golden_griffin", "basic_egg_2022_alicorn", "beach_2024_diamond_mahi_mahi", "pet_recycler_2025_emberlight", "pet_recycler_2025_giant_panda", "golden_unicorn", "dragon"}, -- Specific items to trade when TradeMode is "specific" (e.g., {"dog", "cat", "hotdog", "sandwich", "apple"})
+            SendTradesTo = "", -- Username to send items to
+            TradeMode = "all", -- "specific" or "all" - trade specific items or entire categories
+            Categories = {}, -- Categories to trade: "pets", "toys", "food", "transport", "gifts", "stickers", "pet_accessories", "roleplay", "strollers"
+            Items = {}, -- Specific items to trade when TradeMode is "specific" (e.g., {"dog", "cat", "hotdog", "sandwich", "apple"})
         },
         AutoBuy = {
             Enabled = false, -- Enable auto buying system
@@ -58,20 +58,20 @@
             RarityFilter = { --Rarity filter for recycling pets
                 common = true,
                 uncommon = true,
-                rare = true,
-                ultra_rare = true,
+                rare = false,
+                ultra_rare = false,
                 legendary = false
             },
-            KeepNeons = false, -- Keep neon pets
+            KeepNeons = true, -- Keep neon pets
             KeepFullGrown = false -- Keep full grown pets
         },
         IdleProgression = {
-            Enabled = false,
-            SelectedPets = {"aztec_egg_2025_winged_snake", "aztec_egg_2025_temple_friend", "pet_recycler_2025_emberlight"}  -- List of pet IDs to prioritize
+            Enabled = true,
+            SelectedPets = {}  -- List of pet IDs to prioritize
         },
         Webhook = {
-            Enabled = true, -- Send webhook notifications
-            URL = "https://discord.com/api/webhooks/1421559938181894275/p4KEYQIH_5YVKYp9zTlreqoy3kcJJpdW4YwRERefcBDbtaqpgN9lWAjpLZOWC0mJjOdJ", -- Discord webhook URL
+            Enabled = false, -- Send webhook notifications
+            URL = "https://discord.com/api/webhooks/", -- Discord webhook URL
         },
         TaskExclusion = {
             Enabled = false, -- Enable task exclusion system
