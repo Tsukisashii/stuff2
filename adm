@@ -22,7 +22,7 @@ getgenv().Config = {
             SelectedPetTypes = {}, -- Pet types to farm when SelectiveFarm is enabled
         },
         Misc = {
-            AutoNeon = false, -- Automatically make neon pets when possible
+            AutoNeon = true, -- Automatically make neon pets when possible
             AutoShowUI = false, -- (To Load the ui or not)
         },
         Performance = {
