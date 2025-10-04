@@ -1,4 +1,4 @@
-getgenv().Config = {
+    getgenv().Config = {
         Dashboard = {
             Enabled = true, -- true = Connect to Adopt Me dashboard for remote monitoring/control (uses websocket), false = Local farming only (better performance, no external connections)
             GroupName = "VPS-1", -- Group name to organize accounts on the Adopt Me dashboard (only used if Enabled = true)
@@ -36,7 +36,7 @@ getgenv().Config = {
         AutoTrade = {
             Enabled = false, -- Enable auto trading system (sends trades)
             AutoAcceptTrades = false, -- Auto accept incoming trades (only accepts, won’t send trades if this is on alone)
-            SendTradesTo = "Tsukisashi", -- Username to send items to
+            SendTradesTo = "", -- Username to send items to
             TradeMode = "specific", -- "specific" or "all" - trade specific items or entire categories
             Categories = {"pets"}, -- Categories to trade: "pets", "toys", "food", "transport", "gifts", "stickers", "pet_accessories", "roleplay", "strollers"
             Items = {"unicorn", "aztec_egg_2025_winged_snake", "aztec_egg_2025_temple_friend", "diamond_unicorn", "golden_griffin", "basic_egg_2022_alicorn", "beach_2024_diamond_mahi_mahi", "pet_recycler_2025_emberlight", "pet_recycler_2025_giant_panda", "golden_unicorn", "dragon"}, -- Specific items to trade when TradeMode is "specific" (e.g., {"dog", "cat", "hotdog", "sandwich", "apple"})
@@ -66,7 +66,7 @@ getgenv().Config = {
             KeepFullGrown = false -- Keep full grown pets
         },
         IdleProgression = {
-            Enabled = true,
+            Enabled = false,
             SelectedPets = {"aztec_egg_2025_winged_snake", "aztec_egg_2025_temple_friend", "pet_recycler_2025_emberlight"}  -- List of pet IDs to prioritize
         },
         Webhook = {
