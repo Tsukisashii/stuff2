@@ -67,7 +67,7 @@ getgenv().Config = {
         },
         IdleProgression = {
             Enabled = true,
-            SelectedPets = {}  -- List of pet IDs to prioritize
+            SelectedPets = {"halloween_2025_bat_cat"}  -- List of pet IDs to prioritize
         },
         Webhook = {
             Enabled = false, -- Send webhook notifications
