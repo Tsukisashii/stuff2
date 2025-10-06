@@ -4,9 +4,9 @@ getgenv().Config = {
             GroupName = "VIP", -- Group name to organize accounts on the Adopt Me dashboard (only used if Enabled = true)
         },
         EventFarm = {
-            AutoHauntlet = true, -- Enable/disable event farming
-            AutoTameCatBat = true, 
-            AutoClaimTreatBag = true, 
+            AutoHauntlet = false, -- Enable/disable event farming
+            AutoTameCatBat = false, 
+            AutoClaimTreatBag = false, 
         },
         BabyFarm = false, -- Enable/disable baby farming
         PetFarm = {
@@ -23,7 +23,7 @@ getgenv().Config = {
         },
         Misc = {
             AutoNeon = false, -- Automatically make neon pets when possible
-            AutoShowUI = false, -- (To Load the ui or not)
+            AutoShowUI = true, -- (To Load the ui or not)
         },
         Performance = {
             Disable3DRendering = true, -- Disable 3D rendering for better performance
@@ -35,7 +35,7 @@ getgenv().Config = {
         },
         AutoTrade = {
             Enabled = false, -- Enable auto trading system (sends trades)
-            AutoAcceptTrades = false, -- Auto accept incoming trades (only accepts, won’t send trades if this is on alone)
+            AutoAcceptTrades = true, -- Auto accept incoming trades (only accepts, won’t send trades if this is on alone)
             SendTradesTo = "", -- Username to send items to
             TradeMode = "all", -- "specific" or "all" - trade specific items or entire categories
             Categories = {}, -- Categories to trade: "pets", "toys", "food", "transport", "gifts", "stickers", "pet_accessories", "roleplay", "strollers"
