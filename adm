@@ -30,7 +30,7 @@ getgenv().Config = {
             ReduceGraphics = true, -- Reduce graphics quality to minimum
         },
         AutoPotion = {
-            Enabled = true, -- Use age potions automatically
+            Enabled = false, -- Use age potions automatically
             SelectedPets = {"halloween_2025_bat_cat"}, -- Pet types to age with potions
         },
         AutoTrade = {
@@ -67,7 +67,7 @@ getgenv().Config = {
         },
         IdleProgression = {
             Enabled = true,
-            SelectedPets = {}  -- List of pet IDs to prioritize
+            SelectedPets = {"halloween_2025_bat_cat"}  -- List of pet IDs to prioritize
         },
         Webhook = {
             Enabled = false, -- Send webhook notifications
