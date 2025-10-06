@@ -4,9 +4,9 @@ getgenv().Config = {
             GroupName = "VPS-1", -- Group name to organize accounts on the Adopt Me dashboard (only used if Enabled = true)
         },
         EventFarm = {
-            AutoHauntlet = false, -- Enable/disable event farming
-            AutoTameCatBat = false, 
-            AutoClaimTreatBag = false, 
+            AutoHauntlet = true, -- Enable/disable event farming
+            AutoTameCatBat = true, 
+            AutoClaimTreatBag = true, 
         },
         BabyFarm = false, -- Enable/disable baby farming
         PetFarm = {
