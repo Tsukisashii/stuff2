@@ -27,7 +27,7 @@ getgenv().Config = {
         },
         Performance = {
             Disable3DRendering = false, -- Disable 3D rendering for better performance
-            ReduceGraphics = true, -- Reduce graphics quality to minimum
+            ReduceGraphics = false, -- Reduce graphics quality to minimum
         },
         AutoPotion = {
             Enabled = false, -- Use age potions automatically
