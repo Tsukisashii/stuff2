@@ -4,9 +4,9 @@ getgenv().Config = {
             GroupName = "VIP", -- Group name to organize accounts on the Adopt Me dashboard (only used if Enabled = true)
         },
         EventFarm = {
-            AutoHauntlet = false, -- Enable/disable event farming
-            AutoTameCatBat = false, 
-            AutoClaimTreatBag = false, 
+            AutoHauntlet = true, -- Enable/disable event farming
+            AutoTameCatBat = true, 
+            AutoClaimTreatBag = true, 
         },
         BabyFarm = false, -- Enable/disable baby farming
         PetFarm = {
@@ -23,11 +23,11 @@ getgenv().Config = {
         },
         Misc = {
             AutoNeon = false, -- Automatically make neon pets when possible
-            AutoShowUI = true, -- (To Load the ui or not)
+            AutoShowUI = false, -- (To Load the ui or not)
         },
         Performance = {
-            Disable3DRendering = false, -- Disable 3D rendering for better performance
-            ReduceGraphics = false, -- Reduce graphics quality to minimum
+            Disable3DRendering = true, -- Disable 3D rendering for better performance
+            ReduceGraphics = true, -- Reduce graphics quality to minimum
         },
         AutoPotion = {
             Enabled = false, -- Use age potions automatically
@@ -35,7 +35,7 @@ getgenv().Config = {
         },
         AutoTrade = {
             Enabled = false, -- Enable auto trading system (sends trades)
-            AutoAcceptTrades = true, -- Auto accept incoming trades (only accepts, won’t send trades if this is on alone)
+            AutoAcceptTrades = false, -- Auto accept incoming trades (only accepts, won’t send trades if this is on alone)
             SendTradesTo = "", -- Username to send items to
             TradeMode = "all", -- "specific" or "all" - trade specific items or entire categories
             Categories = {}, -- Categories to trade: "pets", "toys", "food", "transport", "gifts", "stickers", "pet_accessories", "roleplay", "strollers"
@@ -66,7 +66,7 @@ getgenv().Config = {
             KeepFullGrown = false -- Keep full grown pets
         },
         IdleProgression = {
-            Enabled = false,
+            Enabled = true,
             SelectedPets = {"halloween_2025_bat_cat"}  -- List of pet IDs to prioritize
         },
         Webhook = {
