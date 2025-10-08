@@ -26,7 +26,7 @@ getgenv().Config = {
             AutoShowUI = false, -- (To Load the ui or not)
         },
         Performance = {
-            Disable3DRendering = false, -- Disable 3D rendering for better performance
+            Disable3DRendering = true, -- Disable 3D rendering for better performance
             ReduceGraphics = true, -- Reduce graphics quality to minimum
         },
         AutoPotion = {
