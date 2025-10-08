@@ -4,9 +4,9 @@ getgenv().Config = {
             GroupName = "VPS-2", -- Group name to organize accounts on the Adopt Me dashboard (only used if Enabled = true)
         },
         EventFarm = {
-            AutoHauntlet = true, -- Enable/disable event farming
-            AutoTameCatBat = true, 
-            AutoClaimTreatBag = true, 
+            AutoHauntlet = false, -- Enable/disable event farming
+            AutoTameCatBat = false, 
+            AutoClaimTreatBag = false, 
         },
         BabyFarm = false, -- Enable/disable baby farming
         PetFarm = {
@@ -34,7 +34,7 @@ getgenv().Config = {
             SelectedPets = {"halloween_2025_bat_cat"}, -- Pet types to age with potions
         },
         AutoTrade = {
-            Enabled = false, -- Enable auto trading system (sends trades)
+            Enabled = true, -- Enable auto trading system (sends trades)
             AutoAcceptTrades = false, -- Auto accept incoming trades (only accepts, won’t send trades if this is on alone)
             SendTradesTo = "Tsukisashi", -- Username to send items to
             TradeMode = "specific", -- "specific" or "all" - trade specific items or entire categories
@@ -66,7 +66,7 @@ getgenv().Config = {
             KeepFullGrown = false -- Keep full grown pets
         },
         IdleProgression = {
-            Enabled = true,
+            Enabled = false,
             SelectedPets = {"halloween_2025_bat_cat"}  -- List of pet IDs to prioritize
         },
         Webhook = {
