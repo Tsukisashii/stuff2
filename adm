@@ -66,7 +66,7 @@ getgenv().Config = {
             KeepFullGrown = false -- Keep full grown pets
         },
         IdleProgression = {
-            Enabled = true,
+            Enabled = false,
             SelectedPets = {"halloween_2025_bat_cat"}  -- List of pet IDs to prioritize
         },
         Webhook = {
