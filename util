@@ -42,8 +42,8 @@ getgenv().Config = {
             Items = {}, -- Specific items to trade when TradeMode is "specific" (e.g., {"dog", "cat", "hotdog", "sandwich", "apple"})
         },
         AutoBuy = {
-            Enabled = false, -- Enable auto buying system
-            SelectedItems = {}, -- Items to buy (e.g., {"pet_food", "water_cooler", "pizza_ingredients"})
+            Enabled = true, -- Enable auto buying system
+            SelectedItems = {"gift|halloween_2025_spider_box"}, -- Items to buy (e.g., {"pet_food", "water_cooler", "pizza_ingredients"})
         },
         AutoPay = {
             Enabled = false, -- on or off 
