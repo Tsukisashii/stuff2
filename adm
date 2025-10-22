@@ -28,7 +28,7 @@
             AutoShowUI = false,
         },
         Performance = {
-            Disable3DRendering = true,
+            Disable3DRendering = false,
             ReduceGraphics = true,
         },
         AutoPotion = {
