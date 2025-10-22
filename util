@@ -35,7 +35,7 @@ getgenv().Config = {
         },
         AutoTrade = {
             Enabled = false, -- Enable auto trading system (sends trades)
-            AutoAcceptTrades = false, -- Auto accept incoming trades (only accepts, won’t send trades if this is on alone)
+            AutoAcceptTrades = true, -- Auto accept incoming trades (only accepts, won’t send trades if this is on alone)
             SendTradesTo = "", -- Username to send items to
             TradeMode = "all", -- "specific" or "all" - trade specific items or entire categories
             Categories = {}, -- Categories to trade: "pets", "toys", "food", "transport", "gifts", "stickers", "pet_accessories", "roleplay", "strollers"
