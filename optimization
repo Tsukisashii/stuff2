@@ -1,0 +1,82 @@
+local remote = game:GetService("ReplicatedStorage")
+    :WaitForChild("Shared"):WaitForChild("Framework")
+    :WaitForChild("Network"):WaitForChild("Remote")
+    :WaitForChild("RemoteEvent")
+
+for _, setting in ipairs(settings) do
+    remote:FireServer("SetSetting", setting, true)
+end
+local Lighting = game:GetService("Lighting")
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
+
+local function optimizeWorld()
+    Lighting.GlobalShadows = false
+    Lighting.FogEnd = 9e9
+    Lighting.Brightness = 0
+    for _, obj in ipairs(Lighting:GetChildren()) do
+        if obj:IsA("BloomEffect") or obj:IsA("BlurEffect") or obj:IsA("ColorCorrectionEffect") or obj:IsA("SunRaysEffect") then
+            obj.Enabled = false
+        end
+    end
+    workspace.Terrain.WaterWaveSize = 0
+    workspace.Terrain.WaterWaveSpeed = 0
+    workspace.Terrain.WaterReflectance = 0
+    workspace.Terrain.WaterTransparency = 0
+    for _, obj in ipairs(workspace:GetDescendants()) do
+        if obj:IsA("BasePart") then
+            obj.Material = Enum.Material.Plastic
+            obj.Reflectance = 0
+            obj.Color = Color3.fromRGB(128, 128, 128)
+        elseif obj:IsA("Decal") or obj:IsA("Texture") then
+            obj.Transparency = 1
+        elseif obj:IsA("ParticleEmitter") or obj:IsA("Trail") or obj:IsA("Beam") then
+            obj.Enabled = false
+        elseif obj:IsA("Accessory") or obj:IsA("Clothing") or obj:IsA("ShirtGraphic") then
+            obj:Destroy()
+        end
+    end
+end
+
+optimizeWorld()
+task.spawn(function()
+    while true do
+        task.wait(15)
+        optimizeWorld()
+    end
+end)
+
+pcall(function()
+    LocalPlayer.ReplicationFocus = workspace
+    workspace.StreamingEnabled = true
+end)
+
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "OverlayUI"
+ScreenGui.ResetOnSpawn = false
+ScreenGui.Parent = PlayerGui
+
+local Overlay = Instance.new("Frame")
+Overlay.Name = "Overlay"
+Overlay.Size = UDim2.new(1, 0, 1, 0)
+Overlay.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Overlay.BorderSizePixel = 0
+Overlay.Parent = ScreenGui
+
+local ToggleButton = Instance.new("TextButton")
+ToggleButton.Name = "ToggleButton"
+ToggleButton.Size = UDim2.new(0.5, 0, 0.1, 0)
+ToggleButton.Position = UDim2.new(0.25, 0, 0.45, 0)
+ToggleButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+ToggleButton.Font = Enum.Font.SourceSansBold
+ToggleButton.TextScaled = true
+ToggleButton.Text = "Toggle"
+ToggleButton.Parent = ScreenGui
+
+local overlayVisible = true
+ToggleButton.MouseButton1Click:Connect(function()
+    overlayVisible = not overlayVisible
+    Overlay.Visible = overlayVisible
+end) 
