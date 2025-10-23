@@ -1,4 +1,5 @@
-    getgenv().Config = {
+setfpscap(1)
+getgenv().Config = {
         Dashboard = {
             Enabled = true,
             GroupName = "VPS-1",
@@ -28,7 +29,7 @@
             AutoShowUI = false,
         },
         Performance = {
-            Disable3DRendering = false,
+            Disable3DRendering = true,
             ReduceGraphics = true,
         },
         AutoPotion = {
