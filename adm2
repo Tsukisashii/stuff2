@@ -1,7 +1,8 @@
-    getgenv().Config = {
+setfpscap(1)
+getgenv().Config = {
         Dashboard = {
             Enabled = true,
-            GroupName = "VPS-2",
+            GroupName = "VPS-3",
         },
         EventFarm = {
             AutoHauntlet = false,
