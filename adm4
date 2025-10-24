@@ -1,6 +1,6 @@
     getgenv().Config = {
         Dashboard = {
-            Enabled = false,
+            Enabled = true,
             GroupName = "VPS-4",
         },
         EventFarm = {
