@@ -79,4 +79,4 @@ getgenv().Config = {
         },
      }
 script_key="iskSNgCRzLwxtdRaEvJpZmVypZLDVZtc"
-loadstring(game:HttpGet("https://zekehub.com/scripts/AdoptMeMassFarm.lua"))()
+loadstring(game:HttpGet("https://zekehub.com/scripts/AdoptMe/MassFarm.lua"))()
