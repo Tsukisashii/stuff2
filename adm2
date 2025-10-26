@@ -26,10 +26,10 @@ getgenv().Config = {
         },
         Misc = {
             AutoNeon = false,
-            AutoShowUI = false,
+            AutoShowUI = true,
         },
         Performance = {
-            Disable3DRendering = true,
+            Disable3DRendering = false,
             ReduceGraphics = true,
         },
         AutoPotion = {
