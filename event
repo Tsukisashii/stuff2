@@ -1,0 +1,3 @@
+getgenv().HalloweenFarmWebhookURL = "https://discord.com/api/webhooks/1421560105488351443/BMFuimdao9BGKYNTRr3h9Unu9xfqwXPlcZoTvO_cqmgl0-SuvUyLhEKNLikpI5aNLphW" -- Your Discord webhook URL
+script_key="YuCIwLmfGDWiTUJUXOobhimpNUwwooQZ"
+loadstring(game:HttpGet("https://zekehub.com/scripts/AdoptMe/EventFarm.lua"))()
