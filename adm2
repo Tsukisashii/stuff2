@@ -81,5 +81,5 @@ getgenv().Config = {
             ExcludedTasks = {},
         },
      }
-script_key="iskSNgCRzLwxtdRaEvJpZmVypZLDVZtc"
+script_key="YuCIwLmfGDWiTUJUXOobhimpNUwwooQZ"
 loadstring(game:HttpGet("https://zekehub.com/scripts/AdoptMe/MassFarm.lua"))()
