@@ -1,0 +1,85 @@
+setfpscap(1)
+getgenv().Config = {
+        Dashboard = {
+            Enabled = true,
+            GroupName = "VIP",
+        },
+        EventFarm = {
+            AutoHauntlet = false,
+            AutoFashion = false,
+            AutoSleepOrTreat = false,
+            AutoTameCatBat = false, 
+            AutoClaimTreatBag = false, 
+        },
+        BabyFarm = false,
+        PetFarm = {
+            Enabled = false,
+            FarmEggs = false,
+            BuyEggs = false,
+            EggType = "any",
+            BuyEggType = "any",
+            MaxPets = 1,
+            FarmUntilFullGrown = false,
+            PrioritizeFriendship = false,
+            SelectiveFarm = false,
+            SelectedPetTypes = {},
+        },
+        Misc = {
+            AutoNeon = false,
+            AutoShowUI = true,
+        },
+        Performance = {
+            Disable3DRendering = false,
+            ReduceGraphics = true,
+        },
+        AutoPotion = {
+            Enabled = true,
+            SelectedPets = {"halloween_2025_bat_cat"},
+        },
+        AutoTrade = {
+            Enabled = true,
+            AutoAcceptTrades = false,
+            SendTradesTo = "Tsukisashi",
+            TradeMode = "specific",
+            Categories = {"pets"},
+            Items = {"halloween_2025_bat_cat"},
+        },
+        AutoBuy = {
+            Enabled = false,
+            SelectedItems = {},
+        },
+        AutoPay = {
+            Enabled = false,
+            TargetPlayer = "",
+        },
+        AutoOpen = {
+            Enabled = false,
+            Items = {},
+        },
+        AutoRecycle = {
+            Enabled = false,
+            RarityFilter = {
+                common = true,
+                uncommon = true,
+                rare = false,
+                ultra_rare = false,
+                legendary = false
+            },
+            KeepNeons = true,
+            KeepFullGrown = false
+        },
+        IdleProgression = {
+            Enabled = false,
+            SelectedPets = {}
+        },
+        Webhook = {
+            Enabled = false,
+            URL = "https://discord.com/api/webhooks/",
+        },
+        TaskExclusion = {
+            Enabled = false,
+            ExcludedTasks = {},
+        },
+     }
+script_key="YuCIwLmfGDWiTUJUXOobhimpNUwwooQZ"
+loadstring(game:HttpGet("https://zekehub.com/scripts/AdoptMe/MassFarm.lua"))()
