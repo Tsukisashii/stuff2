@@ -42,7 +42,7 @@ getgenv().Config = {
             SendTradesTo = "Tsukisashi",
             TradeMode = "specific",
             Categories = {"pets"},
-            Items = {"halloween_2025_bat_cat"},
+            Items = {"halloween_2025_bat_cat", "unicorn", "dragon"},
         },
         AutoBuy = {
             Enabled = false,
