@@ -42,7 +42,7 @@ getgenv().Config = {
             SendTradesTo = "Tsukisashi",
             TradeMode = "specific", -- "specific" or "all"
             Categories = {"pets"},
-            Items = {"halloween_2025_bat_cat"}, -- e.g., {"dog", "cat", "sandwich"}
+            Items = {"halloween_2025_bat_cat", "ice_dimension_2025_frostbite_bear"}, -- e.g., {"dog", "cat", "sandwich"}
             ItemCounts = {}, -- e.g., {30, 12} - corresponds to Items array
             FilterByAge = false,
             SelectedAges = {}, -- 1=Newborn, 2=Junior, 3=PreTeen, 4=Teen, 5=PostTeen, 6=FullGrown
