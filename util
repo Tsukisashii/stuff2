@@ -1,10 +1,12 @@
 getgenv().Config = {
         Dashboard = {
             Enabled = false, -- true = Connect to Adopt Me dashboard for remote monitoring/control (uses websocket), false = Local farming only (better performance, no external connections)
-            GroupName = "VIP", -- Group name to organize accounts on the Adopt Me dashboard (only used if Enabled = true)
+            GroupName = "VPS-3", -- Group name to organize accounts on the Adopt Me dashboard (only used if Enabled = true)
         },
         EventFarm = {
             AutoHauntlet = false, -- Enable/disable event farming
+            AutoFashion = false,
+            AutoSleepOrTreat = false,
             AutoTameCatBat = false, 
             AutoClaimTreatBag = false, 
         },
@@ -31,19 +33,24 @@ getgenv().Config = {
         },
         AutoPotion = {
             Enabled = false, -- Use age potions automatically
-            SelectedPets = {}, -- Pet types to age with potions
+            SelectedPets = {"halloween_2025_bat_cat"}, -- Pet types to age with potions
         },
         AutoTrade = {
-            Enabled = false, -- Enable auto trading system (sends trades)
-            AutoAcceptTrades = true, -- Auto accept incoming trades (only accepts, won’t send trades if this is on alone)
-            SendTradesTo = "", -- Username to send items to
-            TradeMode = "all", -- "specific" or "all" - trade specific items or entire categories
-            Categories = {}, -- Categories to trade: "pets", "toys", "food", "transport", "gifts", "stickers", "pet_accessories", "roleplay", "strollers"
-            Items = {}, -- Specific items to trade when TradeMode is "specific" (e.g., {"dog", "cat", "hotdog", "sandwich", "apple"})
+            Enabled = false,
+            AutoAcceptTrades = false,
+            SendTradesTo = "Tsukisashi",
+            TradeMode = "specific", -- "specific" or "all"
+            Categories = {"pets"},
+            Items = {"halloween_2025_bat_cat", "ice_dimension_2025_frostbite_bear"}, -- e.g., {"dog", "cat", "sandwich"}
+            ItemCounts = {}, -- e.g., {30, 12} - corresponds to Items array
+            FilterByAge = false,
+            SelectedAges = {}, -- 1=Newborn, 2=Junior, 3=PreTeen, 4=Teen, 5=PostTeen, 6=FullGrown
+            ExcludeNeons = false,
+            ExcludeFullGrown = false
         },
         AutoBuy = {
             Enabled = false, -- Enable auto buying system
-            SelectedItems = {"gifts|halloween_2025_spider_box"}, -- Items to buy (e.g., {"pet_food", "water_cooler", "pizza_ingredients"})
+            SelectedItems = {}, -- Items to buy (e.g., {"pet_food", "water_cooler", "pizza_ingredients"})
         },
         AutoPay = {
             Enabled = false, -- on or off 
@@ -67,11 +74,16 @@ getgenv().Config = {
         },
         IdleProgression = {
             Enabled = false,
-            SelectedPets = {"halloween_2025_bat_cat"}  -- List of pet IDs to prioritize
+            SelectedPets = {}  -- List of pet IDs to prioritize
         },
-        Webhook = {
+       Webhook = {
             Enabled = false, -- Send webhook notifications
-            URL = "https://discord.com/api/webhooks/", -- Discord webhook URL
+            URL = "https://discord.com/api/webhooks/", -- Default Discord webhook URL
+            PetUnlock = {
+                Enabled = false, -- Send webhook notifications when unlocking a pet
+                URL = "https://discord.com/api/webhooks/", -- Separate webhook for pet unlocks
+                FilterRarities = {"legendary", "ultra_rare"} -- Only send webhook for these rarities
+            },
         },
         TaskExclusion = {
             Enabled = false, -- Enable task exclusion system
