@@ -25,7 +25,7 @@ getgenv().Config = {
             SelectedPetTypes = {},
         },
         Misc = {
-            AutoNeon = false,
+            AutoNeon = true,
             AutoShowUI = true,
         },
         Performance = {
