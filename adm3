@@ -1,7 +1,7 @@
 setfpscap(1)
 getgenv().Config = {
         Dashboard = {
-            Enabled = true,
+            Enabled = false,
             GroupName = "VPS-3",
         },
         EventFarm = {
