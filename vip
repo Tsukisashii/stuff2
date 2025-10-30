@@ -34,10 +34,10 @@ getgenv().Config = {
         },
         AutoPotion = {
             Enabled = true,
-            SelectedPets = {"halloween_2025_bat_cat"},
+            SelectedPets = {"halloween_2025_bat_cat", "unicorn"},
         },
         AutoTrade = {
-            Enabled = true,
+            Enabled = false,
             AutoAcceptTrades = false,
             SendTradesTo = "Tsukisashi",
             TradeMode = "specific",
