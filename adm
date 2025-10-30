@@ -25,7 +25,7 @@ getgenv().Config = {
             SelectedPetTypes = {},
         },
         Misc = {
-            AutoNeon = false,
+            AutoNeon = true,
             AutoShowUI = true,
         },
         Performance = {
@@ -37,12 +37,12 @@ getgenv().Config = {
             SelectedPets = {"halloween_2025_bat_cat"},
         },
         AutoTrade = {
-            Enabled = true,
+            Enabled = false,
             AutoAcceptTrades = false,
             SendTradesTo = "Tsukisashi",
             TradeMode = "specific",
             Categories = {"pets"},
-            Items = {"halloween_2025_bat_cat"},
+            Items = {"halloween_2025_bat_cat", "ice_dimension_2025_frostbite_bear"},
         },
         AutoBuy = {
             Enabled = false,
