@@ -1,84 +1,93 @@
-setfpscap(1)
-getgenv().Config = {
+        getgenv().Config = {
         Dashboard = {
-            Enabled = false,
-            GroupName = "VPS-1",
+            Enabled = false, -- true = Connect to Adopt Me dashboard for remote monitoring/control (uses websocket), false = Local farming only (better performance, no external connections)
+            GroupName = "VPS-1", -- Group name to organize accounts on the Adopt Me dashboard (only used if Enabled = true)
         },
         EventFarm = {
-            AutoHauntlet = false,
+            AutoHauntlet = false, -- Enable/disable event farming
             AutoFashion = false,
             AutoSleepOrTreat = false,
             AutoTameCatBat = false, 
             AutoClaimTreatBag = false, 
         },
-        BabyFarm = false,
+        BabyFarm = false, -- Enable/disable baby farming
         PetFarm = {
-            Enabled = false,
-            FarmEggs = false,
-            BuyEggs = false,
-            EggType = "any",
-            BuyEggType = "any",
-            MaxPets = 1,
-            FarmUntilFullGrown = false,
-            PrioritizeFriendship = false,
-            SelectiveFarm = false,
-            SelectedPetTypes = {},
+            Enabled = false, -- Enable/disable pet farming
+            FarmEggs = false, -- Farm eggs instead of regular pets
+            BuyEggs = false, -- Automatically buy eggs when needed
+            EggType = "any", -- Which egg type to farm (any or specific egg ID)
+            BuyEggType = "any", -- Which egg type to buy
+            MaxPets = 1, -- Maximum pets to equip (1-2)
+            FarmUntilFullGrown = false, -- Prioritize pets that aren't full grown
+            PrioritizeFriendship = false, -- Prioritize pets with higher friendship
+            SelectiveFarm = false, -- Only farm specific pet types
+            SelectedPetTypes = {}, -- Pet types to farm when SelectiveFarm is enabled
         },
         Misc = {
-            AutoNeon = true,
-            AutoShowUI = true,
+            AutoNeon = false, -- Automatically make neon pets when possible
+            AutoShowUI = true, -- (To Load the ui or not)
         },
         Performance = {
-            Disable3DRendering = false,
-            ReduceGraphics = true,
+            Disable3DRendering = false, -- Disable 3D rendering for better performance
+            ReduceGraphics = false, -- Reduce graphics quality to minimum
         },
         AutoPotion = {
-            Enabled = true,
-            SelectedPets = {"halloween_2025_bat_cat"},
+            Enabled = false, -- Use age potions automatically
+            SelectedPets = {"halloween_2025_bat_cat"}, -- Pet types to age with potions
         },
         AutoTrade = {
-            Enabled = false,
+            Enabled = true,
             AutoAcceptTrades = false,
             SendTradesTo = "Tsukisashi",
-            TradeMode = "specific",
+            TradeMode = "specific", -- "specific" or "all"
             Categories = {"pets"},
-            Items = {"halloween_2025_bat_cat", "ice_dimension_2025_frostbite_bear"},
+            Items = {"halloween_2025_bat_cat"}, -- e.g., {"dog", "cat", "sandwich"}
+            ItemCounts = {}, -- e.g., {30, 12} - corresponds to Items array
+            FilterByAge = false,
+            SelectedAges = {}, -- 1=Newborn, 2=Junior, 3=PreTeen, 4=Teen, 5=PostTeen, 6=FullGrown
+            ExcludeNeons = false,
+            ExcludeFullGrown = false
         },
         AutoBuy = {
-            Enabled = false,
-            SelectedItems = {},
+            Enabled = false, -- Enable auto buying system
+            SelectedItems = {}, -- Items to buy (e.g., {"pet_food", "water_cooler", "pizza_ingredients"})
         },
         AutoPay = {
-            Enabled = false,
-            TargetPlayer = "",
+            Enabled = false, -- on or off 
+            TargetPlayer = "", -- username of player to pay
         },
         AutoOpen = {
             Enabled = false,
             Items = {},
         },
         AutoRecycle = {
-            Enabled = false,
-            RarityFilter = {
+            Enabled = false, -- Enable auto recycler system
+            RarityFilter = { --Rarity filter for recycling pets
                 common = true,
                 uncommon = true,
                 rare = false,
                 ultra_rare = false,
                 legendary = false
             },
-            KeepNeons = true,
-            KeepFullGrown = false
+            KeepNeons = true, -- Keep neon pets
+            KeepFullGrown = false -- Keep full grown pets
         },
         IdleProgression = {
             Enabled = false,
-            SelectedPets = {}
+            SelectedPets = {}  -- List of pet IDs to prioritize
         },
-        Webhook = {
-            Enabled = false,
-            URL = "https://discord.com/api/webhooks/",
+       Webhook = {
+            Enabled = false, -- Send webhook notifications
+            URL = "https://discord.com/api/webhooks/", -- Default Discord webhook URL
+            PetUnlock = {
+                Enabled = false, -- Send webhook notifications when unlocking a pet
+                URL = "https://discord.com/api/webhooks/", -- Separate webhook for pet unlocks
+                FilterRarities = {"legendary", "ultra_rare"} -- Only send webhook for these rarities
+            },
         },
         TaskExclusion = {
-            Enabled = false,
-            ExcludedTasks = {},
+            Enabled = false, -- Enable task exclusion system
+            ExcludedTasks = {}, -- Tasks to skip (e.g., {"buccaneer_band", "summerfest_bonfire"})
         },
      }
 script_key="YuCIwLmfGDWiTUJUXOobhimpNUwwooQZ"
