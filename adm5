@@ -1,7 +1,7 @@
 setfpscap(1)
 getgenv().Config = {
         Dashboard = {
-            Enabled = false, -- true = Connect to Adopt Me dashboard for remote monitoring/control (uses websocket), false = Local farming only (better performance, no external connections)
+            Enabled = true, -- true = Connect to Adopt Me dashboard for remote monitoring/control (uses websocket), false = Local farming only (better performance, no external connections)
             GroupName = "VPS-5", -- Group name to organize accounts on the Adopt Me dashboard (only used if Enabled = true)
         },
         EventFarm = {
@@ -33,11 +33,11 @@ getgenv().Config = {
             ReduceGraphics = false, -- Reduce graphics quality to minimum
         },
         AutoPotion = {
-            Enabled = false, -- Use age potions automatically
+            Enabled = true, -- Use age potions automatically
             SelectedPets = {"halloween_2025_bat_cat"}, -- Pet types to age with potions
         },
         AutoTrade = {
-            Enabled = true,
+            Enabled = false,
             AutoAcceptTrades = false,
             SendTradesTo = "Tsukisashi",
             TradeMode = "specific", -- "specific" or "all"
