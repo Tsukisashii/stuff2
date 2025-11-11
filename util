@@ -1,14 +1,7 @@
-getgenv().Config = {
+        getgenv().Config = {
         Dashboard = {
             Enabled = false, -- true = Connect to Adopt Me dashboard for remote monitoring/control (uses websocket), false = Local farming only (better performance, no external connections)
             GroupName = "", -- Group name to organize accounts on the Adopt Me dashboard (only used if Enabled = true)
-        },
-        EventFarm = {
-            AutoHauntlet = false, -- Enable/disable event farming
-            AutoFashion = false,
-            AutoSleepOrTreat = false,
-            AutoTameCatBat = false, 
-            AutoClaimTreatBag = false, 
         },
         BabyFarm = false, -- Enable/disable baby farming
         PetFarm = {
@@ -33,19 +26,19 @@ getgenv().Config = {
         },
         AutoPotion = {
             Enabled = false, -- Use age potions automatically
-            SelectedPets = {"halloween_2025_bat_cat"}, -- Pet types to age with potions
+            SelectedPets = {}, -- Pet types to age with potions
         },
         AutoTrade = {
             Enabled = false,
             AutoAcceptTrades = false,
-            SendTradesTo = "Tsukisashi",
-            TradeMode = "specific", -- "specific" or "all"
-            Categories = {"pets"},
-            Items = {"halloween_2025_bat_cat", "ice_dimension_2025_frostbite_bear"}, -- e.g., {"dog", "cat", "sandwich"}
+            SendTradesTo = "",
+            TradeMode = "all", -- "specific" or "all"
+            Categories = {},
+            Items = {}, -- e.g., {"dog", "cat", "sandwich"}
             ItemCounts = {}, -- e.g., {30, 12} - corresponds to Items array
             FilterByAge = false,
             SelectedAges = {}, -- 1=Newborn, 2=Junior, 3=PreTeen, 4=Teen, 5=PostTeen, 6=FullGrown
-            ExcludeNeons = false,
+            ExcludeNeons = true,
             ExcludeFullGrown = false
         },
         AutoBuy = {
@@ -69,8 +62,10 @@ getgenv().Config = {
                 ultra_rare = false,
                 legendary = false
             },
-            KeepNeons = true, -- Keep neon pets
-            KeepFullGrown = false -- Keep full grown pets
+            KeepNeons = true,
+            KeepFullGrown = false,
+            SelectiveMode = false,
+            SelectedPets = {"aztec_egg_2025_winged_snake, aztec_egg_2025_temple_friend, aztec_egg_2025_ahuizotl, ice_dimension_2025_snowy_mammoth, ice_dimension_2025_icy_porcupine, aztec_egg_2025_ehecatl, chocolate_labrador, basic_egg_2022_mouse, aztec_egg_2025_golden_lynx, basic_egg_2022_ant, camping_2025_muskrat, basic_egg_2022_poodle, basic_egg_2022_parakeet, basic_egg_2022_camel, basic_egg_2022_corgi, basic_egg_2022_robot, basic_egg_2022_swordfish, starfish, diamond_unicorn, sky_ux_2023_grinmoire, diamond_griffin, basic_egg_2022_ancient_dragon, basic_egg_2022_orangutan, beach_2024_gold_mahi_mahi, aztec_egg_2025_jungle_frog, aztec_egg_2025_tegu, puma, chocolate_labrador, bunny, fennec, red_panda, beaver, otter, rabbit, buffalo, snow_cat, ginger_cat, ice_dimension_2025_chilly_penguin"}
         },
         IdleProgression = {
             Enabled = false,
@@ -89,6 +84,6 @@ getgenv().Config = {
             Enabled = false, -- Enable task exclusion system
             ExcludedTasks = {}, -- Tasks to skip (e.g., {"buccaneer_band", "summerfest_bonfire"})
         },
-     }
+    };
 script_key="YuCIwLmfGDWiTUJUXOobhimpNUwwooQZ"
 loadstring(game:HttpGet("https://zekehub.com/scripts/AdoptMe/MassFarm.lua"))()
