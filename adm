@@ -1,4 +1,4 @@
-       etgenv().Config = {
+       getgenv().Config = {
         Dashboard = {
             Enabled = true, -- true = Connect to Adopt Me dashboard for remote monitoring/control (uses websocket), false = Local farming only (better performance, no external connections)
             GroupName = "VPS-1", -- Group name to organize accounts on the Adopt Me dashboard (only used if Enabled = true)
