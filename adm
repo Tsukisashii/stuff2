@@ -1,15 +1,7 @@
-setfpscap(1)
-getgenv().Config = {
+       etgenv().Config = {
         Dashboard = {
             Enabled = true, -- true = Connect to Adopt Me dashboard for remote monitoring/control (uses websocket), false = Local farming only (better performance, no external connections)
             GroupName = "VPS-1", -- Group name to organize accounts on the Adopt Me dashboard (only used if Enabled = true)
-        },
-        EventFarm = {
-            AutoHauntlet = false, -- Enable/disable event farming
-            AutoFashion = false,
-            AutoSleepOrTreat = false,
-            AutoTameCatBat = false, 
-            AutoClaimTreatBag = false, 
         },
         BabyFarm = false, -- Enable/disable baby farming
         PetFarm = {
@@ -24,8 +16,11 @@ getgenv().Config = {
             SelectiveFarm = false, -- Only farm specific pet types
             SelectedPetTypes = {}, -- Pet types to farm when SelectiveFarm is enabled
         },
+        AutoNeon = { -- Auto neon 
+            Enabled = false,
+            MakeMega = false, -- to use neon pets to make mega neon
+        },
         Misc = {
-            AutoNeon = false, -- Automatically make neon pets when possible
             AutoShowUI = true, -- (To Load the ui or not)
         },
         Performance = {
@@ -33,20 +28,20 @@ getgenv().Config = {
             ReduceGraphics = false, -- Reduce graphics quality to minimum
         },
         AutoPotion = {
-            Enabled = true, -- Use age potions automatically
-            SelectedPets = {"halloween_2025_bat_cat"}, -- Pet types to age with potions
+            Enabled = false, -- Use age potions automatically
+            SelectedPets = {}, -- Pet types to age with potions
         },
         AutoTrade = {
-            Enabled = false,
+            Enabled = true,
             AutoAcceptTrades = false,
-            SendTradesTo = "Tsukisashi",
+            SendTradesTo = "unlockyroller",
             TradeMode = "specific", -- "specific" or "all"
             Categories = {"pets"},
-            Items = {"halloween_2025_bat_cat", "ice_dimension_2025_frostbite_bear"}, -- e.g., {"dog", "cat", "sandwich"}
+            Items = {"halloween_2025_bat_cat", "penguins_2025_dango_penguins", "pet_recycler_2025_giant_panda", "pet_recycler_2025_emberlight"}, -- e.g., {"dog", "cat", "sandwich"}
             ItemCounts = {}, -- e.g., {30, 12} - corresponds to Items array
             FilterByAge = false,
             SelectedAges = {}, -- 1=Newborn, 2=Junior, 3=PreTeen, 4=Teen, 5=PostTeen, 6=FullGrown
-            ExcludeNeons = false,
+            ExcludeNeons = true,
             ExcludeFullGrown = false
         },
         AutoBuy = {
@@ -57,7 +52,7 @@ getgenv().Config = {
             Enabled = false, -- on or off 
             TargetPlayer = "", -- username of player to pay
         },
-        AutoOpen = {
+        AutoOpen = { -- auto open gift boxes/baits etc 
             Enabled = false,
             Items = {},
         },
@@ -70,26 +65,28 @@ getgenv().Config = {
                 ultra_rare = false,
                 legendary = false
             },
-            KeepNeons = true, -- Keep neon pets
-            KeepFullGrown = false -- Keep full grown pets
+            KeepNeons = true,
+            KeepFullGrown = false, -- Keep full grown pets
+            SelectiveMode = false, -- Only recycle specific pet types
+            SelectedPets = {}
         },
-        IdleProgression = {
+        IdleProgression = { -- pet pen
             Enabled = false,
-            SelectedPets = {}  -- List of pet IDs to prioritize
+            SelectedPets = {}  -- List of pet IDs to use for the pet pen
         },
        Webhook = {
             Enabled = false, -- Send webhook notifications
             URL = "https://discord.com/api/webhooks/", -- Default Discord webhook URL
             PetUnlock = {
-                Enabled = false, -- Send webhook notifications when unlocking a pet
-                URL = "https://discord.com/api/webhooks/", -- Separate webhook for pet unlocks
-                FilterRarities = {"legendary", "ultra_rare"} -- Only send webhook for these rarities
+                Enabled = true, -- Send webhook notifications when unlocking a pet
+                URL = "https://discord.com/api/webhooks/1421559938181894275/p4KEYQIH_5YVKYp9zTlreqoy3kcJJpdW4YwRERefcBDbtaqpgN9lWAjpLZOWC0mJjOdJ", -- Separate webhook for pet unlocks
+                FilterRarities = {"legendary"} -- Only send webhook for these rarities
             },
         },
         TaskExclusion = {
             Enabled = false, -- Enable task exclusion system
             ExcludedTasks = {}, -- Tasks to skip (e.g., {"buccaneer_band", "summerfest_bonfire"})
         },
-     }
+    };
 script_key="YuCIwLmfGDWiTUJUXOobhimpNUwwooQZ"
 loadstring(game:HttpGet("https://zekehub.com/scripts/AdoptMe/MassFarm.lua"))()
