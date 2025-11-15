@@ -1,7 +1,6 @@
-setfpscap(1)
 getgenv().Config = {
         Dashboard = {
-            Enabled = true, -- true = Connect to Adopt Me dashboard for remote monitoring/control (uses websocket), false = Local farming only (better performance, no external connections)
+            Enabled = false, -- true = Connect to Adopt Me dashboard for remote monitoring/control (uses websocket), false = Local farming only (better performance, no external connections)
             GroupName = "VIP", -- Group name to organize accounts on the Adopt Me dashboard (only used if Enabled = true)
         },
         EventFarm = {
@@ -39,10 +38,10 @@ getgenv().Config = {
         AutoTrade = {
             Enabled = true,
             AutoAcceptTrades = false,
-            SendTradesTo = "Tsukisashi",
+            SendTradesTo = "unlockyroller",
             TradeMode = "specific", -- "specific" or "all"
             Categories = {"pets"},
-            Items = {"halloween_2025_bat_cat", "unicorn", "dragon", "ice_dimension_2025_frostbite_bear"}, -- e.g., {"dog", "cat", "sandwich"}
+            Items = {"halloween_2025_bat_cat", "unicorn", "dragon", "penguins_2025_dango_penguins", "pet_recycler_2025_giant_panda", "pet_recycler_2025_emberlight"}, -- e.g., {"dog", "cat", "sandwich"}
             ItemCounts = {}, -- e.g., {30, 12} - corresponds to Items array
             FilterByAge = false,
             SelectedAges = {}, -- 1=Newborn, 2=Junior, 3=PreTeen, 4=Teen, 5=PostTeen, 6=FullGrown
