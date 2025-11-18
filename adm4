@@ -75,8 +75,8 @@
             SelectedPets = {}  -- List of pet IDs to use for the pet pen
         },
        Webhook = {
-            Enabled = false, -- Send webhook notifications
-            URL = "https://discord.com/api/webhooks/", -- Default Discord webhook URL
+            Enabled = true, -- Send webhook notifications
+            URL = "https://discord.com/api/webhooks/1437893246247243892/o34Mk08EVh9xgWsYNb0K8qquV5ZMLlGwBi3NaI_7z762xoS7HpquXOS0EFD8KBEEF2IZ", -- Default Discord webhook URL
             PetUnlock = {
                 Enabled = true, -- Send webhook notifications when unlocking a pet
                 URL = "https://discord.com/api/webhooks/1421559938181894275/p4KEYQIH_5YVKYp9zTlreqoy3kcJJpdW4YwRERefcBDbtaqpgN9lWAjpLZOWC0mJjOdJ", -- Separate webhook for pet unlocks
