@@ -65,7 +65,7 @@
                 ultra_rare = true,
                 legendary = true
             },
-            KeepNeons = true,
+            KeepNeons = false,
             KeepFullGrown = false, -- Keep full grown pets
             SelectiveMode = true, -- Only recycle specific pet types
             SelectedPets = {"aztec_egg_2025_winged_snake, beach_2024_diamond_mahi_mahi, diamond_unicorn, golden_dragon, aztec_egg_2025_temple_friend, aztec_egg_2025_ahuizotl, ice_dimension_2025_snowy_mammoth, ice_dimension_2025_icy_porcupine, aztec_egg_2025_ehecatl, chocolate_labrador, basic_egg_2022_mouse, aztec_egg_2025_golden_lynx, basic_egg_2022_ant, camping_2025_muskrat, basic_egg_2022_poodle, basic_egg_2022_parakeet, basic_egg_2022_camel, basic_egg_2022_corgi, basic_egg_2022_robot, basic_egg_2022_swordfish, starfish, diamond_unicorn, sky_ux_2023_grinmoire, diamond_griffin, basic_egg_2022_ancient_dragon, basic_egg_2022_orangutan, beach_2024_gold_mahi_mahi, aztec_egg_2025_jungle_frog, aztec_egg_2025_tegu, puma, chocolate_labrador, bunny, fennec, red_panda, beaver, otter, rabbit, buffalo, snow_cat, ginger_cat, ice_dimension_2025_chilly_penguin, golden_griffin"}
@@ -75,8 +75,8 @@
             SelectedPets = {}  -- List of pet IDs to use for the pet pen
         },
        Webhook = {
-            Enabled = false, -- Send webhook notifications
-            URL = "https://discord.com/api/webhooks/", -- Default Discord webhook URL
+            Enabled = true, -- Send webhook notifications
+            URL = "https://discord.com/api/webhooks/1437893246247243892/o34Mk08EVh9xgWsYNb0K8qquV5ZMLlGwBi3NaI_7z762xoS7HpquXOS0EFD8KBEEF2IZ", -- Default Discord webhook URL
             PetUnlock = {
                 Enabled = true, -- Send webhook notifications when unlocking a pet
                 URL = "https://discord.com/api/webhooks/1421559938181894275/p4KEYQIH_5YVKYp9zTlreqoy3kcJJpdW4YwRERefcBDbtaqpgN9lWAjpLZOWC0mJjOdJ", -- Separate webhook for pet unlocks
