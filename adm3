@@ -32,7 +32,7 @@
             SelectedPets = {}, -- Pet types to age with potions
         },
         AutoTrade = {
-            Enabled = false,
+            Enabled = true,
             AutoAcceptTrades = false,
             SendTradesTo = "unlockyroller",
             TradeMode = "specific", -- "specific" or "all"
