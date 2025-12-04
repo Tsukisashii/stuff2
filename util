@@ -1,7 +1,7 @@
-        getgenv().Config = {
+ getgenv().Config = {
         Dashboard = {
             Enabled = false, -- true = Connect to Adopt Me dashboard for remote monitoring/control (uses websocket), false = Local farming only (better performance, no external connections)
-            GroupName = "", -- Group name to organize accounts on the Adopt Me dashboard (only used if Enabled = true)
+            GroupName = "adoptme", -- Group name to organize accounts on the Adopt Me dashboard (only used if Enabled = true)
         },
         BabyFarm = false, -- Enable/disable baby farming
         PetFarm = {
@@ -16,8 +16,11 @@
             SelectiveFarm = false, -- Only farm specific pet types
             SelectedPetTypes = {}, -- Pet types to farm when SelectiveFarm is enabled
         },
+        AutoNeon = { -- Auto neon 
+            Enabled = false,
+            MakeMega = false, -- to use neon pets to make mega neon
+        },
         Misc = {
-            AutoNeon = false, -- Automatically make neon pets when possible
             AutoShowUI = true, -- (To Load the ui or not)
         },
         Performance = {
@@ -30,7 +33,7 @@
         },
         AutoTrade = {
             Enabled = false,
-            AutoAcceptTrades = false,
+            AutoAcceptTrades = true,
             SendTradesTo = "",
             TradeMode = "all", -- "specific" or "all"
             Categories = {},
@@ -49,7 +52,7 @@
             Enabled = false, -- on or off 
             TargetPlayer = "", -- username of player to pay
         },
-        AutoOpen = {
+        AutoOpen = { -- auto open gift boxes/baits etc 
             Enabled = false,
             Items = {},
         },
@@ -63,13 +66,15 @@
                 legendary = false
             },
             KeepNeons = true,
-            KeepFullGrown = false,
-            SelectiveMode = true,
-            SelectedPets = {"aztec_egg_2025_winged_snake, aztec_egg_2025_temple_friend, aztec_egg_2025_ahuizotl, ice_dimension_2025_snowy_mammoth, ice_dimension_2025_icy_porcupine, aztec_egg_2025_ehecatl, chocolate_labrador, basic_egg_2022_mouse, aztec_egg_2025_golden_lynx, basic_egg_2022_ant, camping_2025_muskrat, basic_egg_2022_poodle, basic_egg_2022_parakeet, basic_egg_2022_camel, basic_egg_2022_corgi, basic_egg_2022_robot, basic_egg_2022_swordfish, starfish, diamond_unicorn, sky_ux_2023_grinmoire, diamond_griffin, basic_egg_2022_ancient_dragon, basic_egg_2022_orangutan, beach_2024_gold_mahi_mahi, aztec_egg_2025_jungle_frog, aztec_egg_2025_tegu, puma, chocolate_labrador, bunny, fennec, red_panda, beaver, otter, rabbit, buffalo, snow_cat, ginger_cat, ice_dimension_2025_chilly_penguin"}
+            KeepFullGrown = false, -- Keep full grown pets
+            SelectiveMode = false, -- Only recycle specific pet types
+            SelectedPets = {}
         },
-        IdleProgression = {
+        IdleProgression = { -- pet pen
             Enabled = false,
-            SelectedPets = {}  -- List of pet IDs to prioritize
+            SelectedPets = {},  -- List of pet IDs to use for the pet pen (if empty, use all available pets)
+            ExcludedPets = {}, -- List of pet IDs to exclude from the pet pen
+            AutoMinigame = false -- Automatically start the pet pen micro minigame = alot of bucks and xp :moneybag:
         },
        Webhook = {
             Enabled = false, -- Send webhook notifications
