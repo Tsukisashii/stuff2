@@ -6,5 +6,5 @@ getgenv().RollbackConfig = {
     WebhookURL = "https://discord.com/api/webhooks/1443957153688719370/7SRC2suvGn8QCNcJEJbQO7Bbs4WscOgEn3BlmKP1w1IrZvpzHEBx7aHGne0oKKpgFfp1", -- your webhook URL here
     CurrentEggUnique = nil, -- just leave this here please
 };
-script_key="bKCRTzZGwyEiMBGemHRwHmbxcpKZjWGI";
+script_key="bKCRTzZGwyEiMBGemHRwHmbxcpKZjwGI";
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/bbe161c10602064379ebcd1cb13204c9.lua"))()
