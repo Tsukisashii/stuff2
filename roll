@@ -1,10 +1,15 @@
-task.wait(60)
-getgenv().RollbackConfig = {
-    AutoRollback = true, -- true or false
-    SelectedEgg = "pet_recycler_2025_crystal_egg", -- e.g., "cracked_egg", "aussie_egg"
-    WantedPets = {"Giant Panda", "Dango Penguins"}, -- e.g., "dog", "cat", "Kangaroo"
-    WebhookURL = "https://discord.com/api/webhooks/1443957153688719370/7SRC2suvGn8QCNcJEJbQO7Bbs4WscOgEn3BlmKP1w1IrZvpzHEBx7aHGne0oKKpgFfp1", -- your webhook URL here
-    CurrentEggUnique = nil, -- just leave this here please
-};
+  getgenv().RollbackConfig = {
+        AutoRollback = true, -- true or false
+        SelectedEgg = "pet_recycler_2025_crystal_egg", -- e.g., "cracked_egg", "aussie_egg" (use the egg id here)
+        WantedPets = {"Giant Panda", "Dango Penguins"}, -- e.g., "dog", "cat", "Kangaroo" (please use the original name not pet id)
+        WebhookURL = "https://discord.com/api/webhooks/1443957153688719370/7SRC2suvGn8QCNcJEJbQO7Bbs4WscOgEn3BlmKP1w1IrZvpzHEBx7aHGne0oKKpgFfp1", -- your webhook URL here
+        CurrentEggUnique = nil, -- just leave this here please
+        GiftRollback = {
+            Enabled = false, -- true or false
+            WantedItems = {}, -- e.g., "Dog", "Cat" (use exact display name from InventoryDB)
+            AutoOpen = false, -- true or false (auto opens gifts)
+            SelectedGifts = {}, -- e.g., "biggift", "small_gift" (leave empty for all gifts)
+        },
+    };
 script_key="eCSgCxAPXvagVZRuodxAEZXutwuEvAdG";
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/bbe161c10602064379ebcd1cb13204c9.lua"))()
