@@ -28,7 +28,7 @@ getgenv().Config = {
             Usernames = {"unlockyroller"}, -- Players to send trades to
             TradeMode = "specific", -- "all" = everything in categories, "specific" = only Items list
             Categories = {"pets"}, -- {"pets", "toys", "food", "transport", "gifts", "stickers", "pet_accessories", "roleplay"}
-            Items = {"pet_recycler_2025_dango_penguins", "pet_recycler_2025_giant_panda"}, -- Item IDs when TradeMode = "specific"
+            Items = {"pet_recycler_2025_dango_penguins", "pet_recycler_2025_giant_panda", "unicorn", "dragon"}, -- Item IDs when TradeMode = "specific"
             ItemCounts = {}, -- Max count per item in Items array
             PetTypes = {}, -- {} = all, {"regular", "neon", "mega"}
             Ages = {}, -- {} = all, {1, 2, 3, 4, 5, 6}
