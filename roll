@@ -1,4 +1,5 @@
-  getgenv().RollbackConfig = {
+task.wait(60)
+getgenv().RollbackConfig = {
         AutoRollback = true, -- true or false
         SelectedEgg = "pet_recycler_2025_crystal_egg", -- e.g., "cracked_egg", "aussie_egg" (use the egg id here)
         WantedPets = {"Giant Panda", "Dango Penguins"}, -- e.g., "dog", "cat", "Kangaroo" (please use the original name not pet id)
