@@ -12,5 +12,5 @@ getgenv().RollbackConfig = {
             SelectedGifts = {}, -- e.g., "biggift", "small_gift" (leave empty for all gifts)
         },
     };
-script_key="eCSgCxAPXvagVZRuodxAEZXutwuEvAdG";
+script_key="IiGQnbuBVzBiHRASsZrTNCzaVPUAbTRC";
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/bbe161c10602064379ebcd1cb13204c9.lua"))()
