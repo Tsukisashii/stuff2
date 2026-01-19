@@ -1,7 +1,7 @@
 getgenv().Config = {
         Dashboard = {
             Enabled = false, -- Connect to Adopt Me dashboard for remote monitoring/control
-            GroupName = "TRADING", -- Group name for organizing accounts on dashboard
+            GroupName = "adoptme", -- Group name for organizing accounts on dashboard
         },
         BabyFarm = false, -- Does baby farm
         PetFarm = {
@@ -16,23 +16,17 @@ getgenv().Config = {
             SelectiveFarm = false, -- If true, only farm pets in SelectedPetTypes list
             SelectedPetTypes = {}, -- Pet IDs to farm when SelectiveFarm is true (e.g., {"dog", "cat"})
         },
-        EventFarm = {
-            AutoExchange = {
-                Enabled = false, -- Exchange bucks for event currency
-            },
-            AutoSleighball = false, -- Automatically play sleighball minigame (does not work with baby or pet farm)
-        },
         AutoTrade = {
             Enabled = false, -- Enable auto trading
             AutoAcceptTrades = true, -- Accept incoming trade requests
-            Usernames = {"unlockyroller"}, -- Players to send trades to
-            TradeMode = "specific", -- "all" = everything in categories, "specific" = only Items list
-            Categories = {"pets"}, -- {"pets", "toys", "food", "transport", "gifts", "stickers", "pet_accessories", "roleplay"}
-            Items = {"pet_recycler_2025_dango_penguins", "pet_recycler_2025_giant_panda"}, -- Item IDs when TradeMode = "specific"
+            Usernames = {}, -- Players to send trades to
+            TradeMode = "all", -- "all" = everything in categories, "specific" = only Items list
+            Categories = {}, -- {"pets", "toys", "food", "transport", "gifts", "stickers", "pet_accessories", "roleplay"}
+            Items = {}, -- Item IDs when TradeMode = "specific"
             ItemCounts = {}, -- Max count per item in Items array
             PetTypes = {}, -- {} = all, {"regular", "neon", "mega"}
             Ages = {}, -- {} = all, {1, 2, 3, 4, 5, 6}
-            AutoLeaveAfterTrades = true, -- Leave trade area after completing trades
+            AutoLeaveAfterTrades = false, -- Leave trade area after completing trades
         },
         AutoNeon = {
             Enabled = false, -- Enable auto neon/mega fusion
@@ -45,7 +39,8 @@ getgenv().Config = {
             AutoShowUI = true, -- Load the UI on script start (main overlay disable for less memory usage)
             ShowOverlay = false, -- Show stats overlay (disables 3D rendering)
             ReduceGraphics = false, -- Reduce graphics quality to minimum
-            FPSCap = 3, -- FPS cap option (0 = uncapped)
+            FPSCap = 0, -- FPS cap option (0 = uncapped)
+            LureId = "ice_dimension_2025_ice_soup_bait", -- what lure to use for example: "ice_dimension_2025_ice_soup_bait"
         },
         AutoPotion = {
             Enabled = false, -- Use age potions on pets to level them up
@@ -54,6 +49,7 @@ getgenv().Config = {
         AutoBuy = {
             Enabled = false, -- Automatically buy items from shops
             SelectedItems = {}, -- Item IDs to buy
+            BuyAmounts = {}, -- How many of each item to buy. Example: {5, 10} buys 5 cracked_eggs and 10 sandwiches. Empty {} buys infinite of each item. If there are more items than amounts, remaining items default to infinite.
         },
         AutoPay = {
             Enabled = false, -- Send bucks to another player
@@ -66,9 +62,9 @@ getgenv().Config = {
         AutoRecycle = {
             Enabled = false, -- Recycle pets at recycler for rewards
             RarityFilter = {common = true, uncommon = true, rare = false, ultra_rare = false, legendary = false}, -- Which rarities to recycle (true = recycle, false = keep)
-            KeepNeons = true, -- If true, don't recycle neon or mega neon pets
-            KeepFullGrown = false, -- If true, don't recycle full grown pets
-            ExcludedPets = {}, -- Pet IDs to never recycle even if rarity matches
+            AgeFilter = {}, -- empty = all ages, or {1,2,3,4,5,6}
+            VersionFilter = {}, -- empty = all, or {"regular", "neon", "mega"}
+            ExcludedPets = {}, -- Pet IDs to never recycle even if rarity matches {"dog", "cat"}
         },
         IdleProgression = {
             Enabled = false, -- Put pets in pet pen for idle leveling
@@ -89,5 +85,3 @@ getgenv().Config = {
             ExcludedTasks = {}, -- Task IDs to skip (e.g., {"buccaneer_band", "summerfest_bonfire"})
         },
     };
-script_key="YuCIwLmfGDWiTUJUXOobhimpNUwwooQZ"
-loadstring(game:HttpGet("https://zekehub.com/scripts/AdoptMe/MassFarm.lua"))()
