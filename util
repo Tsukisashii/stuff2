@@ -1,6 +1,6 @@
 getgenv().Config = {
         Dashboard = {
-            Enabled = true, -- Connect to Adopt Me dashboard for remote monitoring/control
+            Enabled = false, -- Connect to Adopt Me dashboard for remote monitoring/control
             GroupName = "TRADING", -- Group name for organizing accounts on dashboard
         },
         BabyFarm = false, -- Does baby farm
@@ -24,7 +24,7 @@ getgenv().Config = {
         },
         AutoTrade = {
             Enabled = false, -- Enable auto trading
-            AutoAcceptTrades = false, -- Accept incoming trade requests
+            AutoAcceptTrades = true, -- Accept incoming trade requests
             Usernames = {"unlockyroller"}, -- Players to send trades to
             TradeMode = "specific", -- "all" = everything in categories, "specific" = only Items list
             Categories = {"pets"}, -- {"pets", "toys", "food", "transport", "gifts", "stickers", "pet_accessories", "roleplay"}
