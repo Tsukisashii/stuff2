@@ -40,6 +40,7 @@ getgenv().Config = {
             ShowOverlay = false, -- Show stats overlay (disables 3D rendering)
             ReduceGraphics = false, -- Reduce graphics quality to minimum
             FPSCap = 0, -- FPS cap option (0 = uncapped)
+            LureId = "ice_dimension_2025_ice_soup_bait", -- what lure to use for example: "ice_dimension_2025_ice_soup_bait"
         },
         AutoPotion = {
             Enabled = false, -- Use age potions on pets to level them up
@@ -84,5 +85,5 @@ getgenv().Config = {
             ExcludedTasks = {}, -- Task IDs to skip (e.g., {"buccaneer_band", "summerfest_bonfire"})
         },
     };
-script_key="YuCIwLmfGDWiTUJUXOobhimpNUwwooQZ"
+getgenv().scriptkey="YuCIwLmfGDWiTUJUXOobhimpNUwwooQZ"
 loadstring(game:HttpGet("https://zekehub.com/scripts/AdoptMe/MassFarm.lua"))()
