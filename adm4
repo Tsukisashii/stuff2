@@ -1,6 +1,6 @@
 getgenv().Config = {
         Dashboard = {
-            Enabled = false, -- Connect to Adopt Me dashboard for remote monitoring/control
+            Enabled = true, -- Connect to Adopt Me dashboard for remote monitoring/control
             GroupName = "VPS-4", -- Group name for organizing accounts on dashboard
         },
         BabyFarm = true, -- Does baby farm
