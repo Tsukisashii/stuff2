@@ -1,7 +1,7 @@
-getgenv().Config = {
+ getgenv().Config = {
         Dashboard = {
-            Enabled = false, -- Connect to Adopt Me dashboard for remote monitoring/control
-            GroupName = "VPS-6", -- Group name for organizing accounts on dashboard
+            Enabled = false, -- Connect to Adopt Me dashboard To Control Script/View Stats (https://zekehub.com/dashboard/adoptme)
+            GroupName = "vps1", -- Group name for organizing accounts on dashboard
         },
         BabyFarm = false, -- Does baby farm
         PetFarm = {
@@ -18,7 +18,7 @@ getgenv().Config = {
         },
         AutoTrade = {
             Enabled = false, -- Enable auto trading
-            AutoAcceptTrades = true, -- Accept incoming trade requests
+            AutoAcceptTrades = false, -- Accept incoming trade requests
             Usernames = {}, -- Players to send trades to
             TradeMode = "all", -- "all" = everything in categories, "specific" = only Items list
             Categories = {}, -- {"pets", "toys", "food", "transport", "gifts", "stickers", "pet_accessories", "roleplay"}
@@ -40,7 +40,7 @@ getgenv().Config = {
             ShowOverlay = false, -- Show stats overlay (disables 3D rendering)
             ReduceGraphics = false, -- Reduce graphics quality to minimum
             FPSCap = 0, -- FPS cap option (0 = uncapped)
-            LureId = "ice_dimension_2025_ice_soup_bait", -- what lure to use for example: "ice_dimension_2025_ice_soup_bait"
+            LureId = "ice_dimension_2025_ice_soup_bait" -- what lure to use for example: "ice_dimension_2025_ice_soup_bait"
         },
         AutoPotion = {
             Enabled = false, -- Use age potions on pets to level them up
