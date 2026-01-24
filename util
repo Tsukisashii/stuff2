@@ -1,6 +1,6 @@
  getgenv().Config = {
         Dashboard = {
-            Enabled = true, -- Connect to Adopt Me dashboard To Control Script/View Stats (https://zekehub.com/dashboard/adoptme)
+            Enabled = false, -- Connect to Adopt Me dashboard To Control Script/View Stats (https://zekehub.com/dashboard/adoptme)
             GroupName = "vps1", -- Group name for organizing accounts on dashboard
         },
         BabyFarm = false, -- Does baby farm
@@ -18,7 +18,7 @@
         },
         AutoTrade = {
             Enabled = false, -- Enable auto trading
-            AutoAcceptTrades = false, -- Accept incoming trade requests
+            AutoAcceptTrades = true, -- Accept incoming trade requests
             Usernames = {}, -- Players to send trades to
             TradeMode = "all", -- "all" = everything in categories, "specific" = only Items list
             Categories = {}, -- {"pets", "toys", "food", "transport", "gifts", "stickers", "pet_accessories", "roleplay"}
@@ -38,7 +38,7 @@
         Settings = {
             AutoShowUI = true, -- Load the UI on script start (main overlay disable for less memory usage)
             ShowOverlay = false, -- Show stats overlay (disables 3D rendering)
-            ReduceGraphics = false, -- Reduce graphics quality to minimum
+            ReduceGraphics = true, -- Reduce graphics quality to minimum
             FPSCap = 0, -- FPS cap option (0 = uncapped)
             LureId = "ice_dimension_2025_ice_soup_bait" -- what lure to use for example: "ice_dimension_2025_ice_soup_bait"
         },
