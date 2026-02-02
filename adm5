@@ -1,6 +1,6 @@
 getgenv().Config = {
         Dashboard = {
-            Enabled = false, -- Connect to Adopt Me dashboard To Control Script/View Stats (https://zekehub.com/dashboard/adoptme)
+            Enabled = true, -- Connect to Adopt Me dashboard To Control Script/View Stats (https://zekehub.com/dashboard/adoptme)
             GroupName = "VPS-5", -- Group name for organizing accounts on dashboard
         },
         BabyFarm = false, -- Does baby farm
