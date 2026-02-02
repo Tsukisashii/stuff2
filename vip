@@ -1,6 +1,6 @@
 getgenv().Config = {
         Dashboard = {
-            Enabled = false, -- Connect to Adopt Me dashboard for remote monitoring/control
+            Enabled = false, -- Connect to Adopt Me dashboard To Control Script/View Stats (https://zekehub.com/dashboard/adoptme)
             GroupName = "VIP", -- Group name for organizing accounts on dashboard
         },
         BabyFarm = false, -- Does baby farm
@@ -8,7 +8,7 @@ getgenv().Config = {
             Enabled = false, -- Enables the Pet Farm
             FarmEggs = false, -- If true, equips eggs to hatch them. If false, equips regular pets
             BuyEggs = false, -- If FarmEggs is true and no eggs in inventory, buy eggs automatically
-            EggType = "any", -- Which egg to equip ("any" = first available, or specific egg ID)
+            EggTypes = {}, -- Which eggs to equip ({} = any egg, or {"cracked_egg", "royal_egg"} for specific)
             BuyEggType = "any", -- Which egg to buy when BuyEggs is true ("any" or specific egg ID)
             MaxPets = 1, -- How many pets to equip at once (1 = free, 2 = requires Robux gamepass)
             FarmUntilFullGrown = false, -- If true, selects pets that aren't full grown first
@@ -40,6 +40,7 @@ getgenv().Config = {
             ShowOverlay = false, -- Show stats overlay (disables 3D rendering)
             ReduceGraphics = false, -- Reduce graphics quality to minimum
             FPSCap = 0, -- FPS cap option (0 = uncapped)
+            LureId = "ice_dimension_2025_ice_soup_bait" -- what lure to use for example: "ice_dimension_2025_ice_soup_bait"
         },
         AutoPotion = {
             Enabled = false, -- Use age potions on pets to level them up
@@ -84,5 +85,5 @@ getgenv().Config = {
             ExcludedTasks = {}, -- Task IDs to skip (e.g., {"buccaneer_band", "summerfest_bonfire"})
         },
     };
-script_key="VGJizwfsTmbBKfKriynIovwyOkNifcnk"
+getgenv().scriptkey="VGJizwfsTmbBKfKriynIovwyOkNifcnk"
 loadstring(game:HttpGet("https://zekehub.com/scripts/AdoptMe/MassFarm.lua"))()
