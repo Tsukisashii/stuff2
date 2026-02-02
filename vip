@@ -1,6 +1,6 @@
 getgenv().Config = {
         Dashboard = {
-            Enabled = true, -- Connect to Adopt Me dashboard for remote monitoring/control
+            Enabled = false, -- Connect to Adopt Me dashboard for remote monitoring/control
             GroupName = "VIP", -- Group name for organizing accounts on dashboard
         },
         BabyFarm = false, -- Does baby farm
@@ -17,12 +17,12 @@ getgenv().Config = {
             SelectedPetTypes = {}, -- Pet IDs to farm when SelectiveFarm is true (e.g., {"dog", "cat"})
         },
         AutoTrade = {
-            Enabled = false, -- Enable auto trading
+            Enabled = true, -- Enable auto trading
             AutoAcceptTrades = false, -- Accept incoming trade requests
-            Usernames = {}, -- Players to send trades to
-            TradeMode = "all", -- "all" = everything in categories, "specific" = only Items list
-            Categories = {}, -- {"pets", "toys", "food", "transport", "gifts", "stickers", "pet_accessories", "roleplay"}
-            Items = {}, -- Item IDs when TradeMode = "specific"
+            Usernames = {"bgsinumbertest2", "bgsinumbertest1", "DunjenKwestPro", "unlockyroller"}, -- Players to send trades to
+            TradeMode = "specific", -- "all" = everything in categories, "specific" = only Items list
+            Categories = {"pets"}, -- {"pets", "toys", "food", "transport", "gifts", "stickers", "pet_accessories", "roleplay"}
+            Items = {"pet_recycler_2025_crystal_egg", "pet_recycler_2025_giant_panda", "pet_recycler_2025_dango_penguins", "pet_reyccler_2025_emberlight", "2d_tuesdays_2025_2d_kitty", "food_pets_2026_dragonfruit_fox", "unicorn", "dragon"}, -- Item IDs when TradeMode = "specific"
             ItemCounts = {}, -- Max count per item in Items array
             PetTypes = {}, -- {} = all, {"regular", "neon", "mega"}
             Ages = {}, -- {} = all, {1, 2, 3, 4, 5, 6}
