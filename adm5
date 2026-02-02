@@ -1,46 +1,45 @@
 getgenv().Config = {
         Dashboard = {
-            Enabled = true, -- Connect to Adopt Me dashboard for remote monitoring/control
+            Enabled = false, -- Connect to Adopt Me dashboard for remote monitoring/control
             GroupName = "VPS-5", -- Group name for organizing accounts on dashboard
         },
-        BabyFarm = true, -- Does baby farm
+        BabyFarm = false, -- Does baby farm
         PetFarm = {
-            Enabled = true, -- Enables the Pet Farm
-            FarmEggs = true, -- If true, equips eggs to hatch them. If false, equips regular pets
-            BuyEggs = true, -- If FarmEggs is true and no eggs in inventory, buy eggs automatically
-            EggType = "aztec_egg_2025_aztec_egg", -- Which egg to equip ("any" = first available, or specific egg ID)
-            BuyEggType = "aztec_egg_2025_aztec_egg", -- Which egg to buy when BuyEggs is true ("any" or specific egg ID)
+            Enabled = false, -- Enables the Pet Farm
+            FarmEggs = false, -- If true, equips eggs to hatch them. If false, equips regular pets
+            BuyEggs = false, -- If FarmEggs is true and no eggs in inventory, buy eggs automatically
+            EggType = "any", -- Which egg to equip ("any" = first available, or specific egg ID)
+            BuyEggType = "any", -- Which egg to buy when BuyEggs is true ("any" or specific egg ID)
             MaxPets = 1, -- How many pets to equip at once (1 = free, 2 = requires Robux gamepass)
-            FarmUntilFullGrown = true, -- If true, selects pets that aren't full grown first
+            FarmUntilFullGrown = false, -- If true, selects pets that aren't full grown first
             PrioritizeFriendship = false, -- If true, selects pets with higher friendship level first
             SelectiveFarm = false, -- If true, only farm pets in SelectedPetTypes list
             SelectedPetTypes = {}, -- Pet IDs to farm when SelectiveFarm is true (e.g., {"dog", "cat"})
         },
         AutoTrade = {
-            Enabled = false, -- Enable auto trading
+            Enabled = true, -- Enable auto trading
             AutoAcceptTrades = false, -- Accept incoming trade requests
-            Usernames = {}, -- Players to send trades to
-            TradeMode = "all", -- "all" = everything in categories, "specific" = only Items list
-            Categories = {}, -- {"pets", "toys", "food", "transport", "gifts", "stickers", "pet_accessories", "roleplay"}
-            Items = {}, -- Item IDs when TradeMode = "specific"
+            Usernames = {"bgsinumbertest2", "bgsinumbertest1", "DunjenKwestPro", "unlockyroller"}, -- Players to send trades to
+            TradeMode = "specific", -- "all" = everything in categories, "specific" = only Items list
+            Categories = {"pets"}, -- {"pets", "toys", "food", "transport", "gifts", "stickers", "pet_accessories", "roleplay"}
+            Items = {"pet_recycler_2025_crystal_egg", "pet_recycler_2025_giant_panda", "pet_recycler_2025_dango_penguins", "pet_reyccler_2025_emberlight", "2d_tuesdays_2025_2d_kitty", "food_pets_2026_dragonfruit_fox", "unicorn", "dragon"}, -- Item IDs when TradeMode = "specific"
             ItemCounts = {}, -- Max count per item in Items array
             PetTypes = {}, -- {} = all, {"regular", "neon", "mega"}
             Ages = {}, -- {} = all, {1, 2, 3, 4, 5, 6}
             AutoLeaveAfterTrades = false, -- Leave trade area after completing trades
         },
         AutoNeon = {
-            Enabled = true, -- Enable auto neon/mega fusion
-            MakeMega = true, -- Fuse neons into mega neons
+            Enabled = false, -- Enable auto neon/mega fusion
+            MakeMega = false, -- Fuse neons into mega neons
             NeonAll = true, -- Neon everything possible
             SelectedPets = {}, -- {} when NeonAll = true, otherwise {"dog", "cat"} etc
             MaxPerType = {}, -- {} = unlimited, {dog = 2, cat = 1} = limits per pet type
         },
         Settings = {
-            AutoShowUI = false, -- Load the UI on script start (main overlay disable for less memory usage)
-            ShowOverlay = true, -- Show stats overlay (disables 3D rendering)
-            ReduceGraphics = true, -- Reduce graphics quality to minimum
+            AutoShowUI = true, -- Load the UI on script start (main overlay disable for less memory usage)
+            ShowOverlay = false, -- Show stats overlay (disables 3D rendering)
+            ReduceGraphics = false, -- Reduce graphics quality to minimum
             FPSCap = 0, -- FPS cap option (0 = uncapped)
-            LureId = "ice_dimension_2025_ice_soup_bait", -- what lure to use for example: "ice_dimension_2025_ice_soup_bait"
         },
         AutoPotion = {
             Enabled = false, -- Use age potions on pets to level them up
@@ -60,8 +59,8 @@ getgenv().Config = {
             Items = {}, -- Item IDs to auto open
         },
         AutoRecycle = {
-            Enabled = true, -- Recycle pets at recycler for rewards
-            RarityFilter = {common = true, uncommon = true, rare = true, ultra_rare = true, legendary = false}, -- Which rarities to recycle (true = recycle, false = keep)
+            Enabled = false, -- Recycle pets at recycler for rewards
+            RarityFilter = {common = true, uncommon = true, rare = false, ultra_rare = false, legendary = false}, -- Which rarities to recycle (true = recycle, false = keep)
             AgeFilter = {}, -- empty = all ages, or {1,2,3,4,5,6}
             VersionFilter = {}, -- empty = all, or {"regular", "neon", "mega"}
             ExcludedPets = {}, -- Pet IDs to never recycle even if rarity matches {"dog", "cat"}
@@ -85,5 +84,5 @@ getgenv().Config = {
             ExcludedTasks = {}, -- Task IDs to skip (e.g., {"buccaneer_band", "summerfest_bonfire"})
         },
     };
-getgenv().scriptkey="VGJizwfsTmbBKfKriynIovwyOkNifcnk"
+script_key="VGJizwfsTmbBKfKriynIovwyOkNifcnk"
 loadstring(game:HttpGet("https://zekehub.com/scripts/AdoptMe/MassFarm.lua"))()
