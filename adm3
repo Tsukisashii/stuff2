@@ -3,22 +3,26 @@
             Enabled = true, -- Connect to Adopt Me dashboard To Control Script/View Stats (https://zekehub.com/dashboard/adoptme)
             GroupName = "VPS-3", -- Group name for organizing accounts on dashboard
         },
-        BabyFarm = true, -- Does baby farm
+        BabyFarm = false, -- Does baby farm
         PetFarm = {
-            Enabled = true, -- Enables the Pet Farm
+            Enabled = false, -- Enables the Pet Farm
             FarmEggs = false, -- If true, equips eggs to hatch them. If false, equips regular pets
             BuyEggs = false, -- If FarmEggs is true and no eggs in inventory, buy eggs automatically
             EggTypes = {}, -- Which eggs to equip ({} = any egg, or {"cracked_egg", "royal_egg"} for specific)
             BuyEggType = "any", -- Which egg to buy when BuyEggs is true ("any" or specific egg ID)
             MaxPets = 1, -- How many pets to equip at once (1 = free, 2 = requires Robux gamepass)
             FarmUntilFullGrown = false, -- If true, selects pets that aren't full grown first
-            PrioritizeFriendship = true, -- If true, selects pets with higher friendship level first
+            PrioritizeFriendship = false, -- If true, selects pets with higher friendship level first
             SelectiveFarm = false, -- If true, only farm pets in SelecatedPetTypes list
             SelectedPetTypes = {}, -- Pet IDs to farm when SelectiveFarm is true (e.g., {"dog", "cat"})
+        },
+        EventFarm = {
+            CandyCliff = false, -- Automatically complete Candy Cliff event tasks and buys a chissle
         },
         AutoTrade = {
             Enabled = false, -- Enable auto trading
             AutoAcceptTrades = false, -- Accept incoming trade requests
+            AutoLeaveAfterTrades = false, -- Leave the game after completing trades
             Usernames = {}, -- Players to send trades to
             TradeMode = "all", -- "all" = everything in categories, "specific" = only Items list
             Categories = {}, -- {"pets", "toys", "food", "transport", "gifts", "stickers", "pet_accessories", "roleplay"}
@@ -26,7 +30,6 @@
             ItemCounts = {}, -- Max count per item in Items array
             PetTypes = {}, -- {} = all, {"regular", "neon", "mega"}
             Ages = {}, -- {} = all, {1, 2, 3, 4, 5, 6}
-            AutoLeaveAfterTrades = false, -- Leave trade area after completing trades
         },
         AutoNeon = {
             Enabled = false, -- Enable auto neon/mega fusion
@@ -34,13 +37,6 @@
             NeonAll = true, -- Neon everything possible
             SelectedPets = {}, -- {} when NeonAll = true, otherwise {"dog", "cat"} etc
             MaxPerType = {}, -- {} = unlimited, {dog = 2, cat = 1} = limits per pet type
-        },
-        Settings = {
-            AutoShowUI = false, -- Load the UI on script start (main overlay disable for less memory usage)
-            ShowOverlay = true, -- Show stats overlay (disables 3D rendering)
-            ReduceGraphics = true, -- Reduce graphics quality to minimum
-            FPSCap = 0, -- FPS cap option (0 = uncapped)
-            LureId = "ice_dimension_2025_ice_soup_bait" -- what lure to use for example: "ice_dimension_2025_ice_soup_bait"
         },
         AutoPotion = {
             Enabled = false, -- Use age potions on pets to level them up
@@ -82,9 +78,36 @@
             ExcludedPets = {}, -- Pet IDs to never put in pet pen
             PriorityOrder = {}, -- Order: first = highest priority for pen slots (e.g. {"neon", "regular", "mega"})
         },
+        AccountManager = {
+            Enabled = false, -- Master toggle for account management
+            Tool = "", -- "yummy", "farmsync"
+            Yummy = {
+                Action = "completed", -- "completed" = remove cookie/stop, "swap" = next cookie
+                Reason = "Done", -- Suffix for completed file (Completed-{Reason})
+            },
+            FarmSync = {
+                Action = "completed", -- "completed" = move to done folder, "swap" = move and replace
+                FromFolderId = "", -- Fresh cookies folder ID
+                ToFolderId = "", -- Done cookies folder ID
+                ChangeWithoutReplacement = false, -- Remove even if no replacement available
+                ConfigId = nil, -- Config for new account (nil = same config)
+            },
+            Triggers = {
+                AfterTradeComplete = false, -- Requires AutoTrade.AutoLeaveAfterTrades to be enabled
+                MinBucks = 0, -- Change account when bucks >= this (0 = off)
+                MinPotions = 0, -- Change account when potions >= this (0 = off)
+            },
+        },
+        Settings = {
+            AutoShowUI = true, -- Load the UI on script start (main overlay disable for less memory usage)
+            ShowOverlay = false, -- Show stats overlay (disables 3D rendering)
+            ReduceGraphics = false, -- Reduce graphics quality to minimum
+            FPSCap = 0, -- FPS cap option (0 = uncapped)
+            LureId = "ice_dimension_2025_ice_soup_bait" -- what lure to use for example: "ice_dimension_2025_ice_soup_bait"
+        },
         Webhook = {
-            Enabled = true, -- Send webhook notifications to Discord
-            URL = "https://discord.com/api/webhooks/1437893246247243892/o34Mk08EVh9xgWsYNb0K8qquV5ZMLlGwBi3NaI_7z762xoS7HpquXOS0EFD8KBEEF2IZ", -- Discord webhook URL for notifications
+            Enabled = false, -- Send webhook notifications to Discord
+            URL = "https://discord.com/api/", -- Discord webhook URL for notifications
             PetUnlock = {
                 Enabled = false, -- Send webhook when hatching/unlocking a pet
                 URL = "https://discord.com/api/webhooks/", -- Webhook URL for pet unlocks
