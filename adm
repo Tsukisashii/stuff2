@@ -146,4 +146,4 @@ getgenv().Config = {
     },
 };
 getgenv().scriptkey = "VXlLvTRyyDKYZgTofyETDbYOCycepDzT"
-loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/e44d6f111aa7572161b59c6e14336fb7.lua"))()
+loadstring(game:HttpGet("https://zekehub.com/scripts/AdoptMe/MassFarm.lua"))()
