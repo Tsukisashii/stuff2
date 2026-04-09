@@ -1,9 +1,10 @@
- getgenv().Config = {
+getgenv().Config = {
         Dashboard = {
             Enabled = true, -- Connect to Adopt Me dashboard To Control Script/View Stats (https://zekehub.com/dashboard/adoptme)
             GroupName = "VPS-2", -- Group name for organizing accounts on dashboard
         },
         BabyFarm = false, -- Does baby farm
+        AutoCertificate = false, -- Auto use Pet Handler Pro Certificate when less than 30 days remaining
         PetFarm = {
             Enabled = false, -- Enables the Pet Farm
             FarmEggs = false, -- If true, equips eggs to hatch them. If false, equips regular pets
@@ -18,18 +19,39 @@
         },
         EventFarm = {
             CandyCliff = false, -- Automatically complete Candy Cliff event tasks and buys a chissle
+            MochiNail = false, -- Automatically complete Mochi Nail event and buys the tool needed
         },
         AutoTrade = {
             Enabled = false, -- Enable auto trading
             AutoAcceptTrades = false, -- Accept incoming trade requests
             AutoLeaveAfterTrades = false, -- Leave the game after completing trades
-            Usernames = {}, -- Players to send trades to
+            Usernames = {}, -- Players to send trades to (e.g. {"player1", "player2"})
             TradeMode = "all", -- "all" = everything in categories, "specific" = only Items list
             Categories = {}, -- {"pets", "toys", "food", "transport", "gifts", "stickers", "pet_accessories", "roleplay"}
-            Items = {}, -- Item IDs when TradeMode = "specific"
-            ItemCounts = {}, -- Max count per item in Items array
-            PetTypes = {}, -- {} = all, {"regular", "neon", "mega"}
-            Ages = {}, -- {} = all, {1, 2, 3, 4, 5, 6}
+            Items = {}, -- Item IDs when TradeMode = "specific" (e.g. {"dog", "cat", "turtle"})
+            ItemCounts = {}, -- Max count per item matching Items order (e.g. {30, 12, 5} = 30 dogs, 12 cats, 5 turtles. {} = unlimited all)
+            GlobalPetFilter = {
+                Versions = {}, -- {} = all versions, {"regular", "neon", "mega"} = only these. Fallback for pets NOT in PetFilters
+                Ages = {}, -- {} = all ages, {1, 2, 3, 4, 5, 6} = only these. Mega ignores ages. Fallback for pets NOT in PetFilters
+            },
+            PetFilters = {}, -- Per-pet overrides. If a pet is listed here, GlobalPetFilter is IGNORED for that pet
+            -- Version not listed = NOT traded. {} after version = all ages. {6} = only full grown. Mega always ignores ages
+            -- Example:
+            -- PetFilters = {
+            --     sugarfest_2026_mochi_meow = {
+            --         regular = {6},      -- only full grown regulars
+            --         neon = {4, 5, 6},   -- only flare/sunshine/luminous neons
+            --         mega = {},           -- all megas (ages always ignored for mega)
+            --     },
+            --     turtle = {
+            --         mega = {},           -- ONLY mega turtles (regular and neon NOT traded because not listed)
+            --     },
+            --     dog = {
+            --         regular = {5, 6},   -- post-teen + full grown regulars only
+            --         neon = {},           -- all neon ages
+            --                              -- mega NOT listed = mega dogs NOT traded
+            --     },
+            -- },
         },
         AutoNeon = {
             Enabled = false, -- Enable auto neon/mega fusion
@@ -41,6 +63,7 @@
         AutoPotion = {
             Enabled = false, -- Use age potions on pets to level them up
             SelectedPets = {"lny_2026_fire_foal"}, -- Pet IDs to use potions on (empty = does nothing)
+            PotionVersionFilter = {}, -- Per-pet version filter e.g. {dog = {"neon"}, cat = {"regular", "neon"}} - empty = all versions
         },
         AutoBuy = {
             Enabled = false, -- Automatically buy items from shops
@@ -77,20 +100,22 @@
             SelectedPets = {"cracked_egg"}, -- Pet IDs to put in pet pen (empty = use all)
             ExcludedPets = {}, -- Pet IDs to never put in pet pen
             PriorityOrder = {}, -- Order: first = highest priority for pen slots (e.g. {"neon", "regular", "mega"})
+            PenVersionFilter = {}, -- Per-pet version filter e.g. {dog = {"neon"}, cat = {"regular"}} - empty = all versions
         },
         AccountManager = {
             Enabled = false, -- Master toggle for account management
-            Tool = "", -- "yummy", "farmsync"
+            Tool = "", -- "yummy", "farmsync", "kick" = kick tool means it will just kick you from the game instead of yummy or farmsync actions
             Yummy = {
                 Action = "completed", -- "completed" = remove cookie/stop, "swap" = next cookie
                 Reason = "Done", -- Suffix for completed file (Completed-{Reason})
             },
             FarmSync = {
-                Action = "completed", -- "completed" = move to done folder, "swap" = move and replace
+                Action = "completed", -- "completed" = move to done folder, "swap" = move and replace, "disable" = disable account on FarmSync (requires ApiKey)
                 FromFolderId = "", -- Fresh cookies folder ID
                 ToFolderId = "", -- Done cookies folder ID
                 ChangeWithoutReplacement = false, -- Remove even if no replacement available
                 ConfigId = nil, -- Config for new account (nil = same config)
+                ApiKey = "", -- FarmSync API key (device key)
             },
             Triggers = {
                 AfterTradeComplete = false, -- Requires AutoTrade.AutoLeaveAfterTrades to be enabled
@@ -100,7 +125,7 @@
         },
         Settings = {
             AutoShowUI = true, -- Load the UI on script start (main overlay disable for less memory usage)
-            ShowOverlay = false, -- Show stats overlay (disables 3D rendering)
+            ShowOverlay = false, -- Show stats oReduce verlay (disables 3D rendering)
             ReduceGraphics = false, -- Reduce graphics quality to minimum
             FPSCap = 0, -- FPS cap option (0 = uncapped)
             LureId = "ice_dimension_2025_ice_soup_bait" -- what lure to use for example: "ice_dimension_2025_ice_soup_bait"
