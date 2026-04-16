@@ -1,7 +1,8 @@
-getgenv().Config = {
-        Dashboard = {
-            Enabled = true, -- Connect to Adopt Me dashboard To Control Script/View Stats (https://zekehub.com/dashboard/adoptme)
-            GroupName = "VIP", -- Group name for organizing accounts on dashboard
+  getgenv().Config = {
+      Dashboard = {
+            Enabled = true,       -- Send stats to dashboard
+            SyncConfig = true,    -- Accept config pushes from dashboard
+            GroupName = "VIP",   -- Group name for organising accounts on dashboard (https://zekehub.com/dashboard/adoptme)
         },
         BabyFarm = false, -- Does baby farm
         AutoCertificate = false, -- Auto use Pet Handler Pro Certificate when less than 30 days remaining
@@ -16,10 +17,6 @@ getgenv().Config = {
             PrioritizeFriendship = false, -- If true, selects pets with higher friendship level first
             SelectiveFarm = false, -- If true, only farm pets in SelecatedPetTypes list
             SelectedPetTypes = {}, -- Pet IDs to farm when SelectiveFarm is true (e.g., {"dog", "cat"})
-        },
-        EventFarm = {
-            CandyCliff = false, -- Automatically complete Candy Cliff event tasks and buys a chissle
-            MochiNail = false, -- Automatically complete Mochi Nail event and buys the tool needed
         },
         AutoTrade = {
             Enabled = false, -- Enable auto trading
@@ -128,7 +125,8 @@ getgenv().Config = {
             ShowOverlay = false, -- Show stats oReduce verlay (disables 3D rendering)
             ReduceGraphics = false, -- Reduce graphics quality to minimum
             FPSCap = 0, -- FPS cap option (0 = uncapped)
-            LureId = "ice_dimension_2025_ice_soup_bait" -- what lure to use for example: "ice_dimension_2025_ice_soup_bait"
+            LureId = "ice_dimension_2025_ice_soup_bait", -- what lure to use for example: "ice_dimension_2025_ice_soup_bait"
+            TradeInvites = "Everyone", -- "Everyone" or "Friends"
         },
         Webhook = {
             Enabled = false, -- Send webhook notifications to Discord
