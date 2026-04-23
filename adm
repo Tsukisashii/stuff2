@@ -142,5 +142,5 @@ getgenv().Config = {
         ExcludedTasks = {}, -- Task IDs to skip (e.g., {"buccaneer_band", "summerfest_bonfire"})
     },
 };
-getgenv().script_key = "VXlLvTRyyDKYZgTofyETDbYOCycepDzT"
+getgenv().scriptkey = "VXlLvTRyyDKYZgTofyETDbYOCycepDzT"
 loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/83bd8632214ceaa9cc3b6c0766a974e4.lua"))()
