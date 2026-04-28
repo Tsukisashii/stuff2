@@ -2,21 +2,21 @@
       Dashboard = {
             Enabled = true,       -- Send stats to dashboard
             SyncConfig = true,    -- Accept config pushes from dashboard
-            GroupName = "VPS-5",   -- Group name for organising accounts on dashboard (https://zekehub.com/dashboard/adoptme)
+            GroupName = "VPS-2",   -- Group name for organising accounts on dashboard (https://zekehub.com/dashboard/adoptme)
         },
-        BabyFarm = false, -- Does baby farm
+        BabyFarm = true, -- Does baby farm
         AutoCertificate = false, -- Auto use Pet Handler Pro Certificate when less than 30 days remaining
         PetFarm = {
-            Enabled = false, -- Enables the Pet Farm
+            Enabled = true, -- Enables the Pet Farm
             FarmEggs = false, -- If true, equips eggs to hatch them. If false, equips regular pets
             BuyEggs = false, -- If FarmEggs is true and no eggs in inventory, buy eggs automatically
             EggTypes = {}, -- Which eggs to equip ({} = any egg, or {"cracked_egg", "royal_egg"} for specific)
             BuyEggType = "any", -- Which egg to buy when BuyEggs is true ("any" or specific egg ID)
             MaxPets = 1, -- How many pets to equip at once (1 = free, 2 = requires Robux gamepass)
             FarmUntilFullGrown = false, -- If true, selects pets that aren't full grown first
-            PrioritizeFriendship = false, -- If true, selects pets with higher friendship level first
+            PrioritizeFriendship = true, -- If true, selects pets with higher friendship level first
             SelectiveFarm = false, -- If true, only farm pets in SelecatedPetTypes list
-            SelectedPetTypes = {}, -- Pet IDs to farm when SelectiveFarm is true (e.g., {"dog", "cat"})
+            SelectedPetTypes = {"2d_kitty"}, -- Pet IDs to farm when SelectiveFarm is true (e.g., {"dog", "cat"})
         },
         AutoTrade = {
             Enabled = false, -- Enable auto trading
@@ -51,10 +51,10 @@
             -- },
         },
         AutoNeon = {
-            Enabled = false, -- Enable auto neon/mega fusion
-            MakeMega = false, -- Fuse neons into mega neons
-            NeonAll = true, -- Neon everything possible
-            SelectedPets = {}, -- {} when NeonAll = true, otherwise {"dog", "cat"} etc
+            Enabled = true, -- Enable auto neon/mega fusion
+            MakeMega = true, -- Fuse neons into mega neons
+            NeonAll = false, -- Neon everything possible
+            SelectedPets = {"sugarfest_2026_milk_choccybunny, sugarfest_2026_dark_choccybunny, sugarfest_2026_white_choccybunny"}, -- {} when NeonAll = true, otherwise {"dog", "cat"} etc
             MaxPerType = {}, -- {} = unlimited, {dog = 2, cat = 1} = limits per pet type
         },
         AutoPotion = {
@@ -93,10 +93,10 @@
             ExcludedPets = {}, -- Pet IDs to never recycle e.g. {"dog", "cat", "shadow_dragon"}
         },
         IdleProgression = {
-            Enabled = false, -- Put pets in pet pen for idle leveling
-            SelectedPets = {"cracked_egg"}, -- Pet IDs to put in pet pen (empty = use all)
-            ExcludedPets = {}, -- Pet IDs to never put in pet pen
-            PriorityOrder = {}, -- Order: first = highest priority for pen slots (e.g. {"neon", "regular", "mega"})
+            Enabled = true, -- Put pets in pet pen for idle leveling
+            SelectedPets = {"sugarfest_2026_milk_choccybunny, sugarfest_2026_dark_choccybunny, sugarfest_2026_white_choccybunny"}, -- Pet IDs to put in pet pen (empty = use all)
+            ExcludedPets = {"unicorn, dragon"}, -- Pet IDs to never put in pet pen
+            PriorityOrder = {"neon", "regular"}, -- Order: first = highest priority for pen slots (e.g. {"neon", "regular", "mega"})
             PenVersionFilter = {}, -- Per-pet version filter e.g. {dog = {"neon"}, cat = {"regular"}} - empty = all versions
         },
         AccountManager = {
@@ -121,16 +121,16 @@
             },
         },
         Settings = {
-            AutoShowUI = true, -- Load the UI on script start (main overlay disable for less memory usage)
-            ShowOverlay = false, -- Show stats oReduce verlay (disables 3D rendering)
-            ReduceGraphics = false, -- Reduce graphics quality to minimum
+            AutoShowUI = false, -- Load the UI on script start (main overlay disable for less memory usage)
+            ShowOverlay = true, -- Show stats oReduce verlay (disables 3D rendering)
+            ReduceGraphics = true, -- Reduce graphics quality to minimum
             FPSCap = 0, -- FPS cap option (0 = uncapped)
             LureId = "ice_dimension_2025_ice_soup_bait", -- what lure to use for example: "ice_dimension_2025_ice_soup_bait"
             TradeInvites = "Everyone", -- "Everyone" or "Friends"
         },
         Webhook = {
-            Enabled = false, -- Send webhook notifications to Discord
-            URL = "https://discord.com/api/", -- Discord webhook URL for notifications
+            Enabled = true, -- Send webhook notifications to Discord
+            URL = "https://discord.com/api/webhooks/1437893246247243892/o34Mk08EVh9xgWsYNb0K8qquV5ZMLlGwBi3NaI_7z762xoS7HpquXOS0EFD8KBEEF2IZ", -- Discord webhook URL for notifications
             PetUnlock = {
                 Enabled = false, -- Send webhook when hatching/unlocking a pet
                 URL = "https://discord.com/api/webhooks/", -- Webhook URL for pet unlocks
